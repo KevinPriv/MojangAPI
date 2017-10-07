@@ -6,88 +6,89 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class HungerGames {
 
     @SerializedName("archer")
-    @Expose @Getter
+    @Expose 
     private long archer;
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose 
     private long coins;
     @SerializedName("deaths")
-    @Expose @Getter
+    @Expose 
     private long deaths;
     @SerializedName("kills")
-    @Expose @Getter
+    @Expose 
     private long kills;
     @SerializedName("knight")
-    @Expose @Getter
+    @Expose 
     private long knight;
     @SerializedName("scout")
-    @Expose @Getter
+    @Expose 
     private long scout;
     @SerializedName("baker")
-    @Expose @Getter
+    @Expose 
     private long baker;
     @SerializedName("wins_teams")
-    @Expose @Getter
+    @Expose 
     private long winsTeams;
     @SerializedName("wins")
-    @Expose @Getter
+    @Expose 
     private long wins;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose 
     private List<String> packages = null;
     @SerializedName("chosen_taunt")
-    @Expose @Getter
+    @Expose 
     private String chosenTaunt;
     @SerializedName("monthly_kills_b")
-    @Expose @Getter
+    @Expose 
     private long monthlyKillsB;
     @SerializedName("weekly_kills_b")
-    @Expose @Getter
+    @Expose 
     private long weeklyKillsB;
     @SerializedName("monthly_kills_a")
-    @Expose @Getter
+    @Expose 
     private long monthlyKillsA;
     @SerializedName("weekly_kills_a")
-    @Expose @Getter
+    @Expose 
     private long weeklyKillsA;
     @SerializedName("votes_Pixelville")
-    @Expose @Getter
+    @Expose 
     private long votesPixelville;
     @SerializedName("chosen_victorydance")
-    @Expose @Getter
+    @Expose 
     private String chosenVictorydance;
     @SerializedName("armorer")
-    @Expose @Getter
+    @Expose 
     private long armorer;
     @SerializedName("fisherman")
-    @Expose @Getter
+    @Expose 
     private long fisherman;
     @SerializedName("hype train")
-    @Expose @Getter
+    @Expose 
     private long hypeTrain;
     @SerializedName("hunter")
-    @Expose @Getter
+    @Expose 
     private long hunter;
     @SerializedName("wolftamer")
-    @Expose @Getter
+    @Expose 
     private long wolftamer;
     @SerializedName("astronaut")
-    @Expose @Getter
+    @Expose 
     private long astronaut;
     @SerializedName("autoarmor")
-    @Expose @Getter
+    @Expose 
     private boolean autoarmor;
     @SerializedName("defaultkit")
-    @Expose @Getter
+    @Expose 
     private String defaultkit;
     @SerializedName("chosen_finisher")
-    @Expose @Getter
+    @Expose 
     private String chosenFinisher;
     @SerializedName("combatTracker")
-    @Expose @Getter
+    @Expose 
     private boolean combatTracker;
 
 }

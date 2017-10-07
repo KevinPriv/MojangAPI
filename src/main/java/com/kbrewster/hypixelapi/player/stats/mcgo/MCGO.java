@@ -5,289 +5,290 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class MCGO {
 
     @SerializedName("body_armor_cost")
-    @Expose @Getter
+    @Expose 
     private long bodyArmorCost;
     @SerializedName("bombs_defused")
-    @Expose @Getter
+    @Expose 
     private long bombsDefused;
     @SerializedName("bombs_planted")
-    @Expose @Getter
+    @Expose 
     private long bombsPlanted;
     @SerializedName("bounty_hunter")
-    @Expose @Getter
+    @Expose 
     private long bountyHunter;
     @SerializedName("carbine_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long carbineCostReduction;
     @SerializedName("carbine_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long carbineDamageIncrease;
     @SerializedName("carbine_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long carbineRecoilReduction;
     @SerializedName("carbine_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long carbineReloadSpeedReduction;
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose 
     private long coins;
     @SerializedName("cop_kills")
-    @Expose @Getter
+    @Expose 
     private long copKills;
     @SerializedName("criminal_kills")
-    @Expose @Getter
+    @Expose 
     private long criminalKills;
     @SerializedName("deaths")
-    @Expose @Getter
+    @Expose 
     private long deaths;
     @SerializedName("game_wins")
-    @Expose @Getter
+    @Expose 
     private long gameWins;
     @SerializedName("headshot_kills")
-    @Expose @Getter
+    @Expose 
     private long headshotKills;
     @SerializedName("kills")
-    @Expose @Getter
+    @Expose 
     private long kills;
     @SerializedName("killsNew")
-    @Expose @Getter
+    @Expose 
     private long killsNew;
     @SerializedName("killsNew_10_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew102014;
     @SerializedName("killsNew_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew112014;
     @SerializedName("killsNew_1_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew1112014;
     @SerializedName("killsNew_2_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew2112014;
     @SerializedName("killsNew_3_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew3112014;
     @SerializedName("killsNew_4_10_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew4102014;
     @SerializedName("killsNew_4_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew4112014;
     @SerializedName("killsNew_5_10_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew5102014;
     @SerializedName("killsNew_5_11_2014")
-    @Expose @Getter
+    @Expose 
     private long killsNew5112014;
     @SerializedName("kills_10_2014")
-    @Expose @Getter
+    @Expose 
     private long kills102014;
     @SerializedName("kills_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills112014;
     @SerializedName("kills_1_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills1112014;
     @SerializedName("kills_2_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills2112014;
     @SerializedName("kills_3_10_2014")
-    @Expose @Getter
+    @Expose 
     private long kills3102014;
     @SerializedName("kills_3_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills3112014;
     @SerializedName("kills_4_10_2014")
-    @Expose @Getter
+    @Expose 
     private long kills4102014;
     @SerializedName("kills_4_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills4112014;
     @SerializedName("kills_5_10_2014")
-    @Expose @Getter
+    @Expose 
     private long kills5102014;
     @SerializedName("kills_5_11_2014")
-    @Expose @Getter
+    @Expose 
     private long kills5112014;
     @SerializedName("knife_attack_delay")
-    @Expose @Getter
+    @Expose 
     private long knifeAttackDelay;
     @SerializedName("knife_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long knifeDamageIncrease;
     @SerializedName("magnum_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long magnumCostReduction;
     @SerializedName("magnum_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long magnumDamageIncrease;
     @SerializedName("magnum_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long magnumRecoilReduction;
     @SerializedName("magnum_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long magnumReloadSpeedReduction;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose 
     private List<String> packages = null;
     @SerializedName("pistol_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long pistolDamageIncrease;
     @SerializedName("pistol_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long pistolRecoilReduction;
     @SerializedName("pistol_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long pistolReloadSpeedReduction;
     @SerializedName("pocket_change")
-    @Expose @Getter
+    @Expose 
     private long pocketChange;
     @SerializedName("rifle_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long rifleCostReduction;
     @SerializedName("rifle_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long rifleDamageIncrease;
     @SerializedName("rifle_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long rifleRecoilReduction;
     @SerializedName("rifle_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long rifleReloadSpeedReduction;
     @SerializedName("round_wins")
-    @Expose @Getter
+    @Expose 
     private long roundWins;
     @SerializedName("selectedCarbineDev")
-    @Expose @Getter
+    @Expose 
     private String selectedCarbineDev;
     @SerializedName("selectedCreeperChestplateDev")
-    @Expose @Getter
+    @Expose 
     private String selectedCreeperChestplateDev;
     @SerializedName("selectedCreeperHelmetDev")
-    @Expose @Getter
+    @Expose 
     private String selectedCreeperHelmetDev;
     @SerializedName("selectedKnifeDev")
-    @Expose @Getter
+    @Expose 
     private String selectedKnifeDev;
     @SerializedName("selectedMagnumDev")
-    @Expose @Getter
+    @Expose 
     private String selectedMagnumDev;
     @SerializedName("selectedOcelotChestplateDev")
-    @Expose @Getter
+    @Expose 
     private String selectedOcelotChestplateDev;
     @SerializedName("selectedOcelotHelmetDev")
-    @Expose @Getter
+    @Expose 
     private String selectedOcelotHelmetDev;
     @SerializedName("selectedPistolDev")
-    @Expose @Getter
+    @Expose 
     private String selectedPistolDev;
     @SerializedName("selectedRifleDev")
-    @Expose @Getter
+    @Expose 
     private String selectedRifleDev;
     @SerializedName("selectedShotgunDev")
-    @Expose @Getter
+    @Expose 
     private String selectedShotgunDev;
     @SerializedName("selectedSmgDev")
-    @Expose @Getter
+    @Expose 
     private String selectedSmgDev;
     @SerializedName("shotgun_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long shotgunCostReduction;
     @SerializedName("shotgun_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long shotgunDamageIncrease;
     @SerializedName("shotgun_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long shotgunRecoilReduction;
     @SerializedName("shotgun_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long shotgunReloadSpeedReduction;
     @SerializedName("shots_fired")
-    @Expose @Getter
+    @Expose 
     private long shotsFired;
     @SerializedName("smg_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long smgCostReduction;
     @SerializedName("smg_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long smgDamageIncrease;
     @SerializedName("smg_recoil_reduction")
-    @Expose @Getter
+    @Expose 
     private long smgRecoilReduction;
     @SerializedName("smg_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long smgReloadSpeedReduction;
     @SerializedName("sniper_charge_bonus")
-    @Expose @Getter
+    @Expose 
     private long sniperChargeBonus;
     @SerializedName("sniper_cost_reduction")
-    @Expose @Getter
+    @Expose 
     private long sniperCostReduction;
     @SerializedName("sniper_damage_increase")
-    @Expose @Getter
+    @Expose 
     private long sniperDamageIncrease;
     @SerializedName("sniper_reload_speed_reduction")
-    @Expose @Getter
+    @Expose 
     private long sniperReloadSpeedReduction;
     @SerializedName("strength_training")
-    @Expose @Getter
+    @Expose 
     private long strengthTraining;
     @SerializedName("weekly_kills_b")
-    @Expose @Getter
+    @Expose 
     private long weeklyKillsB;
     @SerializedName("monthly_kills_b")
-    @Expose @Getter
+    @Expose 
     private long monthlyKillsB;
     @SerializedName("monthly_kills_a")
-    @Expose @Getter
+    @Expose 
     private long monthlyKillsA;
     @SerializedName("game_wins_sandstorm")
-    @Expose @Getter
+    @Expose 
     private long gameWinsSandstorm;
     @SerializedName("game_wins_temple")
-    @Expose @Getter
+    @Expose 
     private long gameWinsTemple;
     @SerializedName("game_wins_overgrown")
-    @Expose @Getter
+    @Expose 
     private long gameWinsOvergrown;
     @SerializedName("weekly_kills_a")
-    @Expose @Getter
+    @Expose 
     private long weeklyKillsA;
     @SerializedName("game_wins_atomic")
-    @Expose @Getter
+    @Expose 
     private long gameWinsAtomic;
     @SerializedName("game_wins_carrier")
-    @Expose @Getter
+    @Expose 
     private long gameWinsCarrier;
     @SerializedName("deaths_deathmatch")
-    @Expose @Getter
+    @Expose 
     private long deathsDeathmatch;
     @SerializedName("game_wins_deathmatch")
-    @Expose @Getter
+    @Expose 
     private long gameWinsDeathmatch;
     @SerializedName("cop_kills_deathmatch")
-    @Expose @Getter
+    @Expose 
     private long copKillsDeathmatch;
     @SerializedName("kills_deathmatch")
-    @Expose @Getter
+    @Expose 
     private long killsDeathmatch;
     @SerializedName("criminal_kills_deathmatch")
-    @Expose @Getter
+    @Expose 
     private long criminalKillsDeathmatch;
     @SerializedName("game_wins_alleyway")
-    @Expose @Getter
+    @Expose 
     private long gameWinsAlleyway;
     @SerializedName("show_lobby_prefix")
-    @Expose @Getter
+    @Expose 
     private boolean showLobbyPrefix;
     @SerializedName("selected_lobby_prefix")
-    @Expose @Getter
+    @Expose 
     private String selectedLobbyPrefix;
     @SerializedName("game_wins_reserve")
-    @Expose @Getter
+    @Expose 
     private long gameWinsReserve;
     
 }

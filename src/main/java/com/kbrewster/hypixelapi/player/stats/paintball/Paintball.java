@@ -5,73 +5,74 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class Paintball {
 
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose
     private long coins;
     @SerializedName("deaths")
-    @Expose @Getter
+    @Expose
     private long deaths;
     @SerializedName("fortune")
-    @Expose @Getter
+    @Expose
     private long fortune;
     @SerializedName("hat")
-    @Expose @Getter
+    @Expose
     private String hat;
     @SerializedName("kills")
-    @Expose @Getter
+    @Expose
     private long kills;
     @SerializedName("killstreaks")
-    @Expose @Getter
+    @Expose
     private long killstreaks;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose
     private List<String> packages = null;
     @SerializedName("shots_fired")
-    @Expose @Getter
+    @Expose
     private long shotsFired;
     @SerializedName("superluck")
-    @Expose @Getter
+    @Expose
     private long superluck;
     @SerializedName("wins")
-    @Expose @Getter
+    @Expose
     private long wins;
     @SerializedName("godfather")
-    @Expose @Getter
+    @Expose
     private long godfather;
     @SerializedName("endurance")
-    @Expose @Getter
+    @Expose
     private long endurance;
     @SerializedName("adrenaline")
-    @Expose @Getter
+    @Expose
     private long adrenaline;
     @SerializedName("transfusion")
-    @Expose @Getter
+    @Expose
     private long transfusion;
     @SerializedName("headstart")
-    @Expose @Getter
+    @Expose
     private long headstart;
     @SerializedName("weekly_kills_a")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsA;
     @SerializedName("monthly_kills_a")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsA;
     @SerializedName("monthly_kills_b")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsB;
     @SerializedName("weekly_kills_b")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsB;
     @SerializedName("votes_Octagon")
-    @Expose @Getter
+    @Expose
     private long votesOctagon;
     @SerializedName("forcefieldTime")
-    @Expose @Getter
+    @Expose
     private long forcefieldTime;
     @SerializedName("votes_Mansion")
-    @Expose @Getter
+    @Expose
     private long votesMansion;
 
 }

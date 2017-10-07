@@ -7,199 +7,200 @@ import lombok.Getter;
 
 import java.util.List;
 
+@Getter
 public class GingerBread {
 
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose 
     private long coins;
     @SerializedName("booster_active")
-    @Expose @Getter
+    @Expose 
     private String boosterActive;
     @SerializedName("engine_active")
-    @Expose @Getter
+    @Expose 
     private String engineActive;
     @SerializedName("frame_active")
-    @Expose @Getter
+    @Expose 
     private String frameActive;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose 
     private List<String> packages = null;
     @SerializedName("helmet_active")
-    @Expose @Getter
+    @Expose 
     private String helmetActive;
     @SerializedName("jacket_active")
-    @Expose @Getter
+    @Expose 
     private String jacketActive;
     @SerializedName("shoes_active")
-    @Expose @Getter
+    @Expose 
     private String shoesActive;
     @SerializedName("skin_active")
-    @Expose @Getter
+    @Expose 
     private String skinActive;
     @SerializedName("pants_active")
-    @Expose @Getter
+    @Expose 
     private String pantsActive;
     @SerializedName("horn")
-    @Expose @Getter
+    @Expose 
     private String horn;
     @SerializedName("box_pickups")
-    @Expose @Getter
+    @Expose 
     private long boxPickups;
     @SerializedName("laps_completed")
-    @Expose @Getter
+    @Expose 
     private long lapsCompleted;
     @SerializedName("banana_hits_received")
-    @Expose @Getter
+    @Expose 
     private long bananaHitsReceived;
     @SerializedName("coins_picked_up")
-    @Expose @Getter
+    @Expose 
     private long coinsPickedUp;
     @SerializedName("parts")
-    @Expose @Getter
+    @Expose 
     private String parts;
     @SerializedName("banana_hits_sent")
-    @Expose @Getter
+    @Expose 
     private long bananaHitsSent;
     @SerializedName("silver_trophy")
-    @Expose @Getter
+    @Expose 
     private long silverTrophy;
     @SerializedName("wins")
-    @Expose @Getter
+    @Expose 
     private long wins;
     @SerializedName("blue_torpedo_hit")
-    @Expose @Getter
+    @Expose 
     private long blueTorpedoHit;
     @SerializedName("bronze_trophy")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophy;
     @SerializedName("gold_trophy")
-    @Expose @Getter
+    @Expose 
     private long goldTrophy;
     @SerializedName("gold_trophy_olympus")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyOlympus;
     @SerializedName("gold_trophy_junglerush")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyJunglerush;
     @SerializedName("silver_trophy_weekly_b")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyWeeklyB;
     @SerializedName("silver_trophy_monthly_b")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyMonthlyB;
     @SerializedName("silver_trophy_olympus")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyOlympus;
     @SerializedName("silver_trophy_junglerush")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyJunglerush;
     @SerializedName("silver_trophy_retro")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyRetro;
     @SerializedName("bronze_trophy_weekly_b")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyWeeklyB;
     @SerializedName("bronze_trophy_monthly_b")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyMonthlyB;
     @SerializedName("bronze_trophy_olympus")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyOlympus;
     @SerializedName("bronze_trophy_junglerush")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyJunglerush;
     @SerializedName("bronze_trophy_canyon")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyCanyon;
     @SerializedName("box_pickups_weekly_b")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsWeeklyB;
     @SerializedName("box_pickups_monthly_b")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsMonthlyB;
     @SerializedName("box_pickups_olympus")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsOlympus;
     @SerializedName("box_pickups_junglerush")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsJunglerush;
     @SerializedName("box_pickups_hypixelgp")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsHypixelgp;
     @SerializedName("box_pickups_retro")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsRetro;
     @SerializedName("box_pickups_canyon")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsCanyon;
     @SerializedName("olympus_plays")
-    @Expose @Getter
+    @Expose 
     private long olympusPlays;
     @SerializedName("junglerush_plays")
-    @Expose @Getter
+    @Expose 
     private long junglerushPlays;
     @SerializedName("hypixelgp_plays")
-    @Expose @Getter
+    @Expose 
     private long hypixelgpPlays;
     @SerializedName("retro_plays")
-    @Expose @Getter
+    @Expose 
     private long retroPlays;
     @SerializedName("canyon_plays")
-    @Expose @Getter
+    @Expose 
     private long canyonPlays;
     @SerializedName("particle_trail")
-    @Expose @Getter
+    @Expose 
     private String particleTrail;
     @SerializedName("box_pickups_monthly_a")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsMonthlyA;
     @SerializedName("gold_trophy_retro")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyRetro;
     @SerializedName("silver_trophy_monthly_a")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyMonthlyA;
     @SerializedName("silver_trophy_hypixelgp")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyHypixelgp;
     @SerializedName("silver_trophy_canyon")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyCanyon;
     @SerializedName("bronze_trophy_hypixelgp")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyHypixelgp;
     @SerializedName("bronze_trophy_monthly_a")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyMonthlyA;
     @SerializedName("gold_trophy_canyon")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyCanyon;
     @SerializedName("gold_trophy_hypixelgp")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyHypixelgp;
     @SerializedName("box_pickups_weekly_a")
-    @Expose @Getter
+    @Expose 
     private long boxPickupsWeeklyA;
     @SerializedName("silver_trophy_weekly_a")
-    @Expose @Getter
+    @Expose 
     private long silverTrophyWeeklyA;
     @SerializedName("bronze_trophy_retro")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyRetro;
     @SerializedName("bronze_trophy_weekly_a")
-    @Expose @Getter
+    @Expose 
     private long bronzeTrophyWeeklyA;
     @SerializedName("gold_trophy_monthly_b")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyMonthlyB;
     @SerializedName("gold_trophy_weekly_b")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyWeeklyB;
     @SerializedName("gold_trophy_weekly_a")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyWeeklyA;
     @SerializedName("gold_trophy_monthly_a")
-    @Expose @Getter
+    @Expose 
     private long goldTrophyMonthlyA;
 
     public long getCoins() {

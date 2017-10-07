@@ -5,142 +5,143 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class Quake {
 
     @SerializedName("barrel")
-    @Expose @Getter
+    @Expose
     private String barrel;
     @SerializedName("case")
-    @Expose @Getter
+    @Expose
     private String _case;
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose
     private long coins;
     @SerializedName("deaths")
-    @Expose @Getter
+    @Expose
     private long deaths;
     @SerializedName("kills")
-    @Expose @Getter
+    @Expose
     private long kills;
     @SerializedName("killstreaks")
-    @Expose @Getter
+    @Expose
     private long killstreaks;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose
     private List<String> packages = null;
     @SerializedName("sight")
-    @Expose @Getter
+    @Expose
     private String sight;
     @SerializedName("trigger")
-    @Expose @Getter
+    @Expose
     private String trigger;
     @SerializedName("wins")
-    @Expose @Getter
+    @Expose
     private long wins;
     @SerializedName("muzzle")
-    @Expose @Getter
+    @Expose
     private String muzzle;
     @SerializedName("kills_teams")
-    @Expose @Getter
+    @Expose
     private long killsTeams;
     @SerializedName("killstreaks_teams")
-    @Expose @Getter
+    @Expose
     private long killstreaksTeams;
     @SerializedName("deaths_teams")
-    @Expose @Getter
+    @Expose
     private long deathsTeams;
     @SerializedName("wins_teams")
-    @Expose @Getter
+    @Expose
     private long winsTeams;
     @SerializedName("monthly_kills_a")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsA;
     @SerializedName("weekly_kills_a")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsA;
     @SerializedName("weekly_kills_b")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsB;
     @SerializedName("monthly_kills_b")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsB;
     @SerializedName("hat")
-    @Expose @Getter
+    @Expose
     private String hat;
     @SerializedName("killsound")
-    @Expose @Getter
+    @Expose
     private String killsound;
     @SerializedName("armor")
-    @Expose @Getter
+    @Expose
     private String armor;
     @SerializedName("null")
-    @Expose @Getter
+    @Expose
     private String _null;
     @SerializedName("showKillPrefix")
-    @Expose @Getter
+    @Expose
     private boolean showKillPrefix;
     @SerializedName("boots")
-    @Expose @Getter
+    @Expose
     private String boots;
     @SerializedName("leggings")
-    @Expose @Getter
+    @Expose
     private String leggings;
     @SerializedName("dash_power")
-    @Expose @Getter
+    @Expose
     private String dashPower;
     @SerializedName("dash_cooldown")
-    @Expose @Getter
+    @Expose
     private String dashCooldown;
     @SerializedName("instantRespawn")
-    @Expose @Getter
+    @Expose
     private boolean instantRespawn;
     @SerializedName("kills_dm_teams")
-    @Expose @Getter
+    @Expose
     private long killsDmTeams;
     @SerializedName("kills_timeattack")
-    @Expose @Getter
+    @Expose
     private long killsTimeattack;
     @SerializedName("kills_dm")
-    @Expose @Getter
+    @Expose
     private long killsDm;
     @SerializedName("compass_selected")
-    @Expose @Getter
+    @Expose
     private boolean compassSelected;
     @SerializedName("enable_sound")
-    @Expose @Getter
+    @Expose
     private boolean enableSound;
     @SerializedName("highest_killstreak")
-    @Expose @Getter
+    @Expose
     private long highestKillstreak;
     @SerializedName("distance_travelled_teams")
-    @Expose @Getter
+    @Expose
     private long distanceTravelledTeams;
     @SerializedName("kills_since_update_feb_2017_teams")
-    @Expose @Getter
+    @Expose
     private long killsSinceUpdateFeb2017Teams;
     @SerializedName("shots_fired_teams")
-    @Expose @Getter
+    @Expose
     private long shotsFiredTeams;
     @SerializedName("headshots_teams")
-    @Expose @Getter
+    @Expose
     private long headshotsTeams;
     @SerializedName("distance_travelled")
-    @Expose @Getter
+    @Expose
     private long distanceTravelled;
     @SerializedName("headshots")
-    @Expose @Getter
+    @Expose
     private long headshots;
     @SerializedName("shots_fired")
-    @Expose @Getter
+    @Expose
     private long shotsFired;
     @SerializedName("kills_since_update_feb_2017")
-    @Expose @Getter
+    @Expose
     private long killsSinceUpdateFeb2017;
     @SerializedName("alternative_gun_cooldown_indicator")
-    @Expose @Getter
+    @Expose
     private boolean alternativeGunCooldownIndicator;
     @SerializedName("showDashCooldown")
-    @Expose @Getter
+    @Expose
     private boolean showDashCooldown;
 
 }

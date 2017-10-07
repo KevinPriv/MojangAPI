@@ -5,68 +5,69 @@ import com.google.gson.annotations.SerializedName;
 import com.kbrewster.hypixelapi.player.stats.Stats;
 import lombok.Getter;
 
+@Getter
 public class Player {
 
     @SerializedName("_id")
-    @Expose @Getter
+    @Expose 
     private String id;
-    @Expose @Getter
+    @Expose 
     private String channel;
-    @Expose @Getter
+    @Expose 
     private String displayName;
-    @Expose @Getter
+    @Expose 
     private long firstLogin;
-    @Expose @Getter
+    @Expose 
     private boolean guildNotifications;
-    @Expose @Getter
+    @Expose 
     private int karma;
-    @Expose @Getter
+    @Expose 
     private long lastLogin;
-    @Expose @Getter
+    @Expose 
     private boolean mainlobbytutorial;
-    @Expose @Getter
+    @Expose 
     private int mostRecentMinecraftVersion;
-    @Expose @Getter
+    @Expose 
     private String mostRecentlyThankedUuid;
-    @Expose @Getter
+    @Expose 
     private String mostRecentlyTippedUuid;
-    @Expose @Getter
+    @Expose 
     private long networkExp;
-    @Expose @Getter
+    @Expose 
     private int networkLevel;
-    @Expose @Getter
+    @Expose 
     private String newClock;
-    @Expose @Getter
+    @Expose 
     private String newPackageRank;
-    @Expose @Getter
+    @Expose 
     private String rank;
-    @Expose @Getter
+    @Expose 
     private String particalQuality;
-    @Expose @Getter
+    @Expose 
     private String playername;
-    @Expose @Getter
+    @Expose 
     private int thanksSent;
-    @Expose @Getter
+    @Expose 
     private long timePlaying;
-    @Expose @Getter
+    @Expose 
     private String uuid;
-    @Expose @Getter
+    @Expose 
     private int vanityTokens;
-    @Expose @Getter
+    @Expose 
     private boolean websiteSet;
-    @Expose @Getter
+    @Expose 
     private int thanksReceived;
-    @Expose @Getter
+    @Expose 
     private long lastEugeneMessage;
-    @Expose @Getter
+    @Expose 
     private long last_survey;
-    @Expose @Getter
+    @Expose 
     private String gadget;
-    @Expose @Getter
+    @Expose 
     private String wardrobe;
-    @Expose @Getter
+    @Expose 
     private String pp;
-    @Expose @Getter
+    @Expose 
     private String mcVersionRp;
 
     private boolean newMainTutorial;
@@ -90,80 +91,79 @@ public class Player {
     private boolean REWARD_FIND_VINNY8BALL;
     //TODO: PRESENTS; I REALLY CBA
 
-    @Expose @Getter
+    @Expose 
     private boolean testPass;
-    @Expose @Getter
+    @Expose 
     private long vanityFirstConvertedBox;
-    @Expose @Getter
+    @Expose 
     private long lastAdsenseGenerateTime;
-    @Expose @Getter
+    @Expose 
     private long petJourneyTimestamp;
-    @Expose @Getter
+    @Expose 
     private long lastClaimedReward;
-    @Expose @Getter
+    @Expose 
     private int totalRewards;
-    @Expose @Getter
+    @Expose 
     private int totalDailyRewards;
-    @Expose @Getter
+    @Expose 
     private int rewardStreak;
-    @Expose @Getter
+    @Expose 
     private int rewardScore;
-    @Expose @Getter
+    @Expose 
     private int rewardHighScore;
-    @Expose @Getter
+    @Expose 
     private int adsense_tokens;
-    @Expose @Getter
+    @Expose 
     private String userLanguage;
-    @Expose @Getter
+    @Expose 
     private boolean translationMsgFirstLogin;
-    @Expose @Getter
+    @Expose 
     private boolean autoDetectLanguage;
-    @Expose @Getter
+    @Expose 
     private int flashingSalePopup;
-    @Expose @Getter
+    @Expose 
     private int flashingSaleOpens;
-    @Expose @Getter
+    @Expose 
     private int flashingSaleClicks;
-    @Expose @Getter
+    @Expose 
     private int flashingSalePoppedUp;
-    @Expose @Getter
+    @Expose 
     private boolean translationMsgFirstLoginEnglish;
-    @Expose @Getter
+    @Expose 
     private boolean combatTracker;
-    @Expose @Getter
+    @Expose 
     private boolean beamLink;
-    @Expose @Getter
+    @Expose 
     private int quickjoin_timestamp;
-    @Expose @Getter
+    @Expose 
     private int quickjoin_uses;
-    @Expose @Getter
+    @Expose 
     private boolean SANTA_QUEST_STARTED;
-    @Expose @Getter
+    @Expose 
     private int gifts_grinch;
-    @Expose @Getter
+    @Expose 
     private boolean SANTA_FINISHED;
-    @Expose @Getter
+    @Expose 
     private int spec_speed;
-    @Expose @Getter
+    @Expose 
     private boolean show_tip_holograms;
-    @Expose @Getter
+    @Expose 
     private boolean show_wizard_actionbar_info;
-    @Expose @Getter
+    @Expose 
     private boolean show_tntrun_actionbar_info;
-    @Expose @Getter
+    @Expose 
     private boolean show_tnttag_actionbar_info;
-    @Expose @Getter
+    @Expose 
     private long lastLogout;
-    @Expose @Getter
+    @Expose 
     private long networkExpNew;
-    @Expose @Getter
+    @Expose 
     private String currentGadget;
-    @Expose @Getter
+    @Expose 
     private String network_update_book;
-    @Expose @Getter
+    @Expose 
     private String mostRecentGameType;
-
-    @Expose @Getter
+    @Expose 
     private Stats stats;
 
 

@@ -6,232 +6,233 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class Walls {
 
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose
     private long coins;
     @SerializedName("deaths")
-    @Expose @Getter
+    @Expose
     private long deaths;
     @SerializedName("losses")
-    @Expose @Getter
+    @Expose
     private long losses;
     @SerializedName("kills")
-    @Expose @Getter
+    @Expose
     private long kills;
     @SerializedName("weekly_wins_a")
-    @Expose @Getter
+    @Expose
     private long weeklyWinsA;
     @SerializedName("monthly_wins_b")
-    @Expose @Getter
+    @Expose
     private long monthlyWinsB;
     @SerializedName("wins")
-    @Expose @Getter
+    @Expose
     private long wins;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose
     private List<String> packages = null;
     @SerializedName("weekly_wins_b")
-    @Expose @Getter
+    @Expose
     private long weeklyWinsB;
     @SerializedName("final_form")
-    @Expose @Getter
+    @Expose
     private long finalForm;
     @SerializedName("berserk")
-    @Expose @Getter
+    @Expose
     private long berserk;
     @SerializedName("swift")
-    @Expose @Getter
+    @Expose
     private long swift;
     @SerializedName("opportunity")
-    @Expose @Getter
+    @Expose
     private long opportunity;
     @SerializedName("vampirism")
-    @Expose @Getter
+    @Expose
     private long vampirism;
     @SerializedName("fortune")
-    @Expose @Getter
+    @Expose
     private long fortune;
     @SerializedName("expert_miner")
-    @Expose @Getter
+    @Expose
     private long expertMiner;
     @SerializedName("tenacity")
-    @Expose @Getter
+    @Expose
     private long tenacity;
     @SerializedName("adrenaline")
-    @Expose @Getter
+    @Expose
     private long adrenaline;
     @SerializedName("shout_count")
-    @Expose @Getter
+    @Expose
     private long shoutCount;
     @SerializedName("chainkiller")
-    @Expose @Getter
+    @Expose
     private long chainkiller;
     @SerializedName("haste")
-    @Expose @Getter
+    @Expose
     private long haste;
     @SerializedName("vitality")
-    @Expose @Getter
+    @Expose
     private long vitality;
     @SerializedName("dwarwen_skills")
-    @Expose @Getter
+    @Expose
     private long dwarwenSkills;
     @SerializedName("grave_digger")
-    @Expose @Getter
+    @Expose
     private long graveDigger;
     @SerializedName("hunter")
-    @Expose @Getter
+    @Expose
     private long hunter;
     @SerializedName("stone_guardian")
-    @Expose @Getter
+    @Expose
     private long stoneGuardian;
     @SerializedName("master_troll")
-    @Expose @Getter
+    @Expose
     private long masterTroll;
     @SerializedName("sage")
-    @Expose @Getter
+    @Expose
     private long sage;
     @SerializedName("step")
-    @Expose @Getter
+    @Expose
     private long step;
     @SerializedName("redstone_expert")
-    @Expose @Getter
+    @Expose
     private long redstoneExpert;
     @SerializedName("farmer")
-    @Expose @Getter
+    @Expose
     private long farmer;
     @SerializedName("ready")
-    @Expose @Getter
+    @Expose
     private long ready;
     @SerializedName("canadian")
-    @Expose @Getter
+    @Expose
     private long canadian;
     @SerializedName("guitarist")
-    @Expose @Getter
+    @Expose
     private long guitarist;
     @SerializedName("necromancer")
-    @Expose @Getter
+    @Expose
     private long necromancer;
     @SerializedName("lazyman")
-    @Expose @Getter
+    @Expose
     private long lazyman;
     @SerializedName("fireproof")
-    @Expose @Getter
+    @Expose
     private long fireproof;
     @SerializedName("weekly_kills_a")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsA;
     @SerializedName("monthly_kills_a")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsA;
     @SerializedName("fisherman")
-    @Expose @Getter
+    @Expose
     private long fisherman;
     @SerializedName("trap_engineer")
-    @Expose @Getter
+    @Expose
     private long trapEngineer;
     @SerializedName("gold_rush")
-    @Expose @Getter
+    @Expose
     private long goldRush;
     @SerializedName("creeper_egg")
-    @Expose @Getter
+    @Expose
     private long creeperEgg;
     @SerializedName("get_to_the_choppa")
-    @Expose @Getter
+    @Expose
     private long getToTheChoppa;
     @SerializedName("very_fortunate")
-    @Expose @Getter
+    @Expose
     private long veryFortunate;
     @SerializedName("leather_worker")
-    @Expose @Getter
+    @Expose
     private long leatherWorker;
     @SerializedName("really_shiny")
-    @Expose @Getter
+    @Expose
     private long reallyShiny;
     @SerializedName("soup_drinker")
-    @Expose @Getter
+    @Expose
     private long soupDrinker;
     @SerializedName("pyromaniac")
-    @Expose @Getter
+    @Expose
     private long pyromaniac;
     @SerializedName("einstein")
-    @Expose @Getter
+    @Expose
     private long einstein;
     @SerializedName("skybase_king")
-    @Expose @Getter
+    @Expose
     private long skybaseKing;
     @SerializedName("burn_baby_burn")
-    @Expose @Getter
+    @Expose
     private long burnBabyBurn;
     @SerializedName("thats_hot")
-    @Expose @Getter
+    @Expose
     private long thatsHot;
     @SerializedName("insane_farmer")
-    @Expose @Getter
+    @Expose
     private long insaneFarmer;
     @SerializedName("scotsman")
-    @Expose @Getter
+    @Expose
     private long scotsman;
     @SerializedName("boss_guardian")
-    @Expose @Getter
+    @Expose
     private long bossGuardian;
     @SerializedName("boss_digger")
-    @Expose @Getter
+    @Expose
     private long bossDigger;
     @SerializedName("boss_skills")
-    @Expose @Getter
+    @Expose
     private long bossSkills;
     @SerializedName("cats_eye")
-    @Expose @Getter
+    @Expose
     private long catsEye;
     @SerializedName("artisan")
-    @Expose @Getter
+    @Expose
     private long artisan;
     @SerializedName("bacon")
-    @Expose @Getter
+    @Expose
     private long bacon;
     @SerializedName("bomberman")
-    @Expose @Getter
+    @Expose
     private long bomberman;
     @SerializedName("chemist")
-    @Expose @Getter
+    @Expose
     private long chemist;
     @SerializedName("smart_boy")
-    @Expose @Getter
+    @Expose
     private long smartBoy;
     @SerializedName("snack_lover")
-    @Expose @Getter
+    @Expose
     private long snackLover;
     @SerializedName("blacksmith")
-    @Expose @Getter
+    @Expose
     private long blacksmith;
     @SerializedName("escapist")
-    @Expose @Getter
+    @Expose
     private long escapist;
     @SerializedName("chef")
-    @Expose @Getter
+    @Expose
     private long chef;
     @SerializedName("Inventory")
-    @Expose @Getter
+    @Expose
     private Inventory inventory;
     @SerializedName("monthly_kills_b")
-    @Expose @Getter
+    @Expose
     private long monthlyKillsB;
     @SerializedName("monthly_wins_a")
-    @Expose @Getter
+    @Expose
     private long monthlyWinsA;
     @SerializedName("weekly_kills_b")
-    @Expose @Getter
+    @Expose
     private long weeklyKillsB;
     @SerializedName("monthly_assists_a")
-    @Expose @Getter
+    @Expose
     private long monthlyAssistsA;
     @SerializedName("assists")
-    @Expose @Getter
+    @Expose
     private long assists;
     @SerializedName("weekly_assists_a")
-    @Expose @Getter
+    @Expose
     private long weeklyAssistsA;
 
 

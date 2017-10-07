@@ -5,148 +5,149 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
+@Getter
 public class VampireZ {
 
     @SerializedName("coins")
-    @Expose @Getter
+    @Expose
     private long coins;
     @SerializedName("human_deaths")
-    @Expose @Getter
+    @Expose
     private long humanDeaths;
     @SerializedName("vampire_deaths")
-    @Expose @Getter
+    @Expose
     private long vampireDeaths;
     @SerializedName("vampire_kills")
-    @Expose @Getter
+    @Expose
     private long vampireKills;
     @SerializedName("zombie_kills")
-    @Expose @Getter
+    @Expose
     private long zombieKills;
     @SerializedName("most_vampire_kills")
-    @Expose @Getter
+    @Expose
     private long mostVampireKills;
     @SerializedName("human_wins")
-    @Expose @Getter
+    @Expose
     private long humanWins;
     @SerializedName("gold_starter")
-    @Expose @Getter
+    @Expose
     private long goldStarter;
     @SerializedName("gold_booster")
-    @Expose @Getter
+    @Expose
     private long goldBooster;
     @SerializedName("zombie_doubler")
-    @Expose @Getter
+    @Expose
     private long zombieDoubler;
     @SerializedName("vampire_doubler")
-    @Expose @Getter
+    @Expose
     private long vampireDoubler;
     @SerializedName("baby_hater")
-    @Expose @Getter
+    @Expose
     private long babyHater;
     @SerializedName("constitution")
-    @Expose @Getter
+    @Expose
     private long constitution;
     @SerializedName("van_helsing")
-    @Expose @Getter
+    @Expose
     private long vanHelsing;
     @SerializedName("transfusion")
-    @Expose @Getter
+    @Expose
     private long transfusion;
     @SerializedName("fireproofing")
-    @Expose @Getter
+    @Expose
     private long fireproofing;
     @SerializedName("explosive_killer")
-    @Expose @Getter
+    @Expose
     private long explosiveKiller;
     @SerializedName("foresight")
-    @Expose @Getter
+    @Expose
     private long foresight;
     @SerializedName("theology")
-    @Expose @Getter
+    @Expose
     private long theology;
     @SerializedName("loot_drops")
-    @Expose @Getter
+    @Expose
     private long lootDrops;
     @SerializedName("basic_swag")
-    @Expose @Getter
+    @Expose
     private long basicSwag;
     @SerializedName("expert_swag")
-    @Expose @Getter
+    @Expose
     private long expertSwag;
     @SerializedName("advanced_swag")
-    @Expose @Getter
+    @Expose
     private long advancedSwag;
     @SerializedName("monthly_human_wins_b")
-    @Expose @Getter
+    @Expose
     private long monthlyHumanWinsB;
     @SerializedName("weekly_human_wins_a")
-    @Expose @Getter
+    @Expose
     private long weeklyHumanWinsA;
     @SerializedName("packages")
-    @Expose @Getter
+    @Expose
     private List<String> packages = null;
     @SerializedName("kill_booster")
-    @Expose @Getter
+    @Expose
     private long killBooster;
     @SerializedName("blood_booster")
-    @Expose @Getter
+    @Expose
     private long bloodBooster;
     @SerializedName("vampiric_minion")
-    @Expose @Getter
+    @Expose
     private long vampiricMinion;
     @SerializedName("wave_booster")
-    @Expose @Getter
+    @Expose
     private long waveBooster;
     @SerializedName("drain_punch")
-    @Expose @Getter
+    @Expose
     private long drainPunch;
     @SerializedName("blood_drinker")
-    @Expose @Getter
+    @Expose
     private long bloodDrinker;
     @SerializedName("final_breath")
-    @Expose @Getter
+    @Expose
     private long finalBreath;
     @SerializedName("hellborn")
-    @Expose @Getter
+    @Expose
     private long hellborn;
     @SerializedName("vampiric_scream")
-    @Expose @Getter
+    @Expose
     private long vampiricScream;
     @SerializedName("renfield")
-    @Expose @Getter
+    @Expose
     private long renfield;
     @SerializedName("terror_level")
-    @Expose @Getter
+    @Expose
     private long terrorLevel;
     @SerializedName("frankensteins_monster")
-    @Expose @Getter
+    @Expose
     private long frankensteinsMonster;
     @SerializedName("weekly_human_wins_b")
-    @Expose @Getter
+    @Expose
     private long weeklyHumanWinsB;
     @SerializedName("human_kills")
-    @Expose @Getter
+    @Expose
     private long humanKills;
     @SerializedName("votes_Pyramids")
-    @Expose @Getter
+    @Expose
     private long votesPyramids;
     @SerializedName("monthly_human_wins_a")
-    @Expose @Getter
+    @Expose
     private long monthlyHumanWinsA;
     @SerializedName("gold_bought")
-    @Expose @Getter
+    @Expose
     private long goldBought;
     @SerializedName("monthly_vampire_wins_b")
-    @Expose @Getter
+    @Expose
     private long monthlyVampireWinsB;
     @SerializedName("weekly_vampire_wins_b")
-    @Expose @Getter
+    @Expose
     private long weeklyVampireWinsB;
     @SerializedName("weekly_vampire_wins_a")
-    @Expose @Getter
+    @Expose
     private long weeklyVampireWinsA;
     @SerializedName("updated_stats")
-    @Expose @Getter
+    @Expose
     private boolean updatedStats;
 
 }

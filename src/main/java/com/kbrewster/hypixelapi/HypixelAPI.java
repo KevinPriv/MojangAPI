@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Objects;
 
 /**
- * TODO: JAVADOC
+ * Allows to acess the api
  */
 public class HypixelAPI {
 

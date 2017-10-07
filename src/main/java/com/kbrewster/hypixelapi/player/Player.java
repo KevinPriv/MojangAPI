@@ -3,69 +3,70 @@ package com.kbrewster.hypixelapi.player;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.kbrewster.hypixelapi.player.stats.Stats;
+import lombok.Getter;
 
 public class Player {
 
     @SerializedName("_id")
-    @Expose
+    @Expose @Getter
     private String id;
-    @Expose
+    @Expose @Getter
     private String channel;
-    @Expose
+    @Expose @Getter
     private String displayName;
-    @Expose
+    @Expose @Getter
     private long firstLogin;
-    @Expose
+    @Expose @Getter
     private boolean guildNotifications;
-    @Expose
+    @Expose @Getter
     private int karma;
-    @Expose
+    @Expose @Getter
     private long lastLogin;
-    @Expose
+    @Expose @Getter
     private boolean mainlobbytutorial;
-    @Expose
+    @Expose @Getter
     private int mostRecentMinecraftVersion;
-    @Expose
+    @Expose @Getter
     private String mostRecentlyThankedUuid;
-    @Expose
+    @Expose @Getter
     private String mostRecentlyTippedUuid;
-    @Expose
+    @Expose @Getter
     private long networkExp;
-    @Expose
+    @Expose @Getter
     private int networkLevel;
-    @Expose
+    @Expose @Getter
     private String newClock;
-    @Expose
+    @Expose @Getter
     private String newPackageRank;
-    @Expose
+    @Expose @Getter
     private String rank;
-    @Expose
+    @Expose @Getter
     private String particalQuality;
-    @Expose
+    @Expose @Getter
     private String playername;
-    @Expose
+    @Expose @Getter
     private int thanksSent;
-    @Expose
+    @Expose @Getter
     private long timePlaying;
-    @Expose
+    @Expose @Getter
     private String uuid;
-    @Expose
+    @Expose @Getter
     private int vanityTokens;
-    @Expose
+    @Expose @Getter
     private boolean websiteSet;
-    @Expose
+    @Expose @Getter
     private int thanksReceived;
-    @Expose
+    @Expose @Getter
     private long lastEugeneMessage;
-    @Expose
+    @Expose @Getter
     private long last_survey;
-    @Expose
+    @Expose @Getter
     private String gadget;
-    @Expose
+    @Expose @Getter
     private String wardrobe;
-    @Expose
+    @Expose @Getter
     private String pp;
-    @Expose
+    @Expose @Getter
     private String mcVersionRp;
 
     private boolean newMainTutorial;
@@ -89,424 +90,81 @@ public class Player {
     private boolean REWARD_FIND_VINNY8BALL;
     //TODO: PRESENTS; I REALLY CBA
 
-    @Expose
+    @Expose @Getter
     private boolean testPass;
-    @Expose
+    @Expose @Getter
     private long vanityFirstConvertedBox;
-    @Expose
+    @Expose @Getter
     private long lastAdsenseGenerateTime;
-    @Expose
+    @Expose @Getter
     private long petJourneyTimestamp;
-    @Expose
+    @Expose @Getter
     private long lastClaimedReward;
-    @Expose
+    @Expose @Getter
     private int totalRewards;
-    @Expose
+    @Expose @Getter
     private int totalDailyRewards;
-    @Expose
+    @Expose @Getter
     private int rewardStreak;
-    @Expose
+    @Expose @Getter
     private int rewardScore;
-    @Expose
+    @Expose @Getter
     private int rewardHighScore;
-    @Expose
+    @Expose @Getter
     private int adsense_tokens;
-    @Expose
+    @Expose @Getter
     private String userLanguage;
-    @Expose
+    @Expose @Getter
     private boolean translationMsgFirstLogin;
-    @Expose
+    @Expose @Getter
     private boolean autoDetectLanguage;
-    @Expose
+    @Expose @Getter
     private int flashingSalePopup;
-    @Expose
+    @Expose @Getter
     private int flashingSaleOpens;
-    @Expose
+    @Expose @Getter
     private int flashingSaleClicks;
-    @Expose
+    @Expose @Getter
     private int flashingSalePoppedUp;
-    @Expose
+    @Expose @Getter
     private boolean translationMsgFirstLoginEnglish;
-    @Expose
+    @Expose @Getter
     private boolean combatTracker;
-    @Expose
+    @Expose @Getter
     private boolean beamLink;
-    @Expose
+    @Expose @Getter
     private int quickjoin_timestamp;
-    @Expose
+    @Expose @Getter
     private int quickjoin_uses;
-    @Expose
+    @Expose @Getter
     private boolean SANTA_QUEST_STARTED;
-    @Expose
+    @Expose @Getter
     private int gifts_grinch;
-    @Expose
+    @Expose @Getter
     private boolean SANTA_FINISHED;
-    @Expose
+    @Expose @Getter
     private int spec_speed;
-    @Expose
+    @Expose @Getter
     private boolean show_tip_holograms;
-    @Expose
+    @Expose @Getter
     private boolean show_wizard_actionbar_info;
-    @Expose
+    @Expose @Getter
     private boolean show_tntrun_actionbar_info;
-    @Expose
+    @Expose @Getter
     private boolean show_tnttag_actionbar_info;
-    @Expose
+    @Expose @Getter
     private long lastLogout;
-    @Expose
+    @Expose @Getter
     private long networkExpNew;
-    @Expose
+    @Expose @Getter
     private String currentGadget;
-    @Expose
+    @Expose @Getter
     private String network_update_book;
-    @Expose
+    @Expose @Getter
     private String mostRecentGameType;
 
+    @Expose @Getter
     private Stats stats;
-
-    public Stats getStats() {
-        return stats;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getChannel() {
-        return channel;
-    }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public long getFirstLogin() {
-        return firstLogin;
-    }
-
-    public boolean isGuildNotifications() {
-        return guildNotifications;
-    }
-
-    public int getKarma() {
-        return karma;
-    }
-
-    public long getLastLogin() {
-        return lastLogin;
-    }
-
-    public boolean isMainlobbytutorial() {
-        return mainlobbytutorial;
-    }
-
-    public int getMostRecentMinecraftVersion() {
-        return mostRecentMinecraftVersion;
-    }
-
-    public String getMostRecentlyThankedUuid() {
-        return mostRecentlyThankedUuid;
-    }
-
-    public String getMostRecentlyTippedUuid() {
-        return mostRecentlyTippedUuid;
-    }
-
-    public long getNetworkExp() {
-        return networkExp;
-    }
-
-    public int getNetworkLevel() {
-        return networkLevel;
-    }
-
-    public String getNewClock() {
-        return newClock;
-    }
-
-    public String getNewPackageRank() {
-        return newPackageRank;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public String getParticalQuality() {
-        return particalQuality;
-    }
-
-    public String getPlayername() {
-        return playername;
-    }
-
-    public int getThanksSent() {
-        return thanksSent;
-    }
-
-    public long getTimePlaying() {
-        return timePlaying;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public int getVanityTokens() {
-        return vanityTokens;
-    }
-
-    public boolean isWebsiteSet() {
-        return websiteSet;
-    }
-
-    public int getThanksReceived() {
-        return thanksReceived;
-    }
-
-    public long getLastEugeneMessage() {
-        return lastEugeneMessage;
-    }
-
-    public long getLast_survey() {
-        return last_survey;
-    }
-
-    public String getGadget() {
-        return gadget;
-    }
-
-    public String getWardrobe() {
-        return wardrobe;
-    }
-
-    public String getPp() {
-        return pp;
-    }
-
-    public String getMcVersionRp() {
-        return mcVersionRp;
-    }
-
-    public boolean isNewMainTutorial() {
-        return newMainTutorial;
-    }
-
-    public boolean isREWARD_FIND_JAMIETHEGEEK() {
-        return REWARD_FIND_JAMIETHEGEEK;
-    }
-
-    public boolean isREWARD_FIND_AGENTK() {
-        return REWARD_FIND_AGENTK;
-    }
-
-    public boolean isREWARD_FIND_REZZUS() {
-        return REWARD_FIND_REZZUS;
-    }
-
-    public boolean isREWARD_FIND_HCHERNDON() {
-        return REWARD_FIND_HCHERNDON;
-    }
-
-    public boolean isREWARD_FIND_ZEROERRORS() {
-        return REWARD_FIND_ZEROERRORS;
-    }
-
-    public boolean isREWARD_FIND_VLADTOBEHERE() {
-        return REWARD_FIND_VLADTOBEHERE;
-    }
-
-    public boolean isREWARD_FIND_CRYPTKEEPER() {
-        return REWARD_FIND_CRYPTKEEPER;
-    }
-
-    public boolean isREWARD_FIND_MINIKLOON() {
-        return REWARD_FIND_MINIKLOON;
-    }
-
-    public boolean isREWARD_FIND_PXLPANDA() {
-        return REWARD_FIND_PXLPANDA;
-    }
-
-    public boolean isREWARD_FIND_ZUMULUS() {
-        return REWARD_FIND_ZUMULUS;
-    }
-
-    public boolean isREWARD_FIND_PLANCKE() {
-        return REWARD_FIND_PLANCKE;
-    }
-
-    public boolean isREWARD_FIND_NITROHOLIC() {
-        return REWARD_FIND_NITROHOLIC;
-    }
-
-    public boolean isREWARD_FIND_APUNCH() {
-        return REWARD_FIND_APUNCH;
-    }
-
-    public boolean isREWARD_FIND_LUCKYKESSIE() {
-        return REWARD_FIND_LUCKYKESSIE;
-    }
-
-    public boolean isREWARD_FIND_DCTR() {
-        return REWARD_FIND_DCTR;
-    }
-
-    public boolean isREWARD_FIND_CTD() {
-        return REWARD_FIND_CTD;
-    }
-
-    public boolean isREWARD_FIND_NINJACHARLIET() {
-        return REWARD_FIND_NINJACHARLIET;
-    }
-
-    public boolean isREWARD_FIND_VINNY8BALL() {
-        return REWARD_FIND_VINNY8BALL;
-    }
-
-    public boolean isTestPass() {
-        return testPass;
-    }
-
-    public long getVanityFirstConvertedBox() {
-        return vanityFirstConvertedBox;
-    }
-
-    public long getLastAdsenseGenerateTime() {
-        return lastAdsenseGenerateTime;
-    }
-
-    public long getPetJourneyTimestamp() {
-        return petJourneyTimestamp;
-    }
-
-    public long getLastClaimedReward() {
-        return lastClaimedReward;
-    }
-
-    public int getTotalRewards() {
-        return totalRewards;
-    }
-
-    public int getTotalDailyRewards() {
-        return totalDailyRewards;
-    }
-
-    public int getRewardStreak() {
-        return rewardStreak;
-    }
-
-    public int getRewardScore() {
-        return rewardScore;
-    }
-
-    public int getRewardHighScore() {
-        return rewardHighScore;
-    }
-
-    public int getAdsense_tokens() {
-        return adsense_tokens;
-    }
-
-    public String getUserLanguage() {
-        return userLanguage;
-    }
-
-    public boolean isTranslationMsgFirstLogin() {
-        return translationMsgFirstLogin;
-    }
-
-    public boolean isAutoDetectLanguage() {
-        return autoDetectLanguage;
-    }
-
-    public int getFlashingSalePopup() {
-        return flashingSalePopup;
-    }
-
-    public int getFlashingSaleOpens() {
-        return flashingSaleOpens;
-    }
-
-    public int getFlashingSaleClicks() {
-        return flashingSaleClicks;
-    }
-
-    public int getFlashingSalePoppedUp() {
-        return flashingSalePoppedUp;
-    }
-
-    public boolean isTranslationMsgFirstLoginEnglish() {
-        return translationMsgFirstLoginEnglish;
-    }
-
-    public boolean isCombatTracker() {
-        return combatTracker;
-    }
-
-    public boolean isBeamLink() {
-        return beamLink;
-    }
-
-    public int getQuickjoin_timestamp() {
-        return quickjoin_timestamp;
-    }
-
-    public int getQuickjoin_uses() {
-        return quickjoin_uses;
-    }
-
-    public boolean isSANTA_QUEST_STARTED() {
-        return SANTA_QUEST_STARTED;
-    }
-
-    public int getGifts_grinch() {
-        return gifts_grinch;
-    }
-
-    public boolean isSANTA_FINISHED() {
-        return SANTA_FINISHED;
-    }
-
-    public int getSpec_speed() {
-        return spec_speed;
-    }
-
-    public boolean isShow_tip_holograms() {
-        return show_tip_holograms;
-    }
-
-    public boolean isShow_wizard_actionbar_info() {
-        return show_wizard_actionbar_info;
-    }
-
-    public boolean isShow_tntrun_actionbar_info() {
-        return show_tntrun_actionbar_info;
-    }
-
-    public boolean isShow_tnttag_actionbar_info() {
-        return show_tnttag_actionbar_info;
-    }
-
-    public long getLastLogout() {
-        return lastLogout;
-    }
-
-    public long getNetworkExpNew() {
-        return networkExpNew;
-    }
-
-    public String getCurrentGadget() {
-        return currentGadget;
-    }
-
-    public String getNetwork_update_book() {
-        return network_update_book;
-    }
-
-    public String getMostRecentGameType() {
-        return mostRecentGameType;
-    }
 
 
 }

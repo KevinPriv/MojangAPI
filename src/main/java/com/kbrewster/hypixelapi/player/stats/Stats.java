@@ -10,61 +10,27 @@ import com.kbrewster.hypixelapi.player.stats.mcgo.MCGO;
 import com.kbrewster.hypixelapi.player.stats.quake.Quake;
 import com.kbrewster.hypixelapi.player.stats.tnt.TNTGames;
 import com.kbrewster.hypixelapi.player.stats.uhc.UHC;
+import lombok.Getter;
 
 public class Stats {
 
-    @Expose
+    @Expose @Getter
     private Arcade Arcade;
-    @Expose
+    @Expose @Getter
     private Arena Arena;
-    @Expose
+    @Expose @Getter
     private BattleGrounds Battleground;
-    @Expose
+    @Expose @Getter
     private HungerGames HungerGames;
-    @Expose
+    @Expose @Getter
     private MCGO MCGO;
-    @Expose
+    @Expose @Getter
     private Quake Quake;
-    @Expose
+    @Expose @Getter
     private TNTGames TNTGames;
-    @Expose
+    @Expose @Getter
     private UHC UHC;
-    @Expose
+    @Expose @Getter
     private GingerBread GingerBread;
 
-    public com.kbrewster.hypixelapi.player.stats.arcade.Arcade getArcade() {
-        return Arcade;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.arena.Arena getArena() {
-        return Arena;
-    }
-
-    public BattleGrounds getBattleground() {
-        return Battleground;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.hg.HungerGames getHungerGames() {
-        return HungerGames;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.mcgo.MCGO getMCGO() {
-        return MCGO;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.quake.Quake getQuake() {
-        return Quake;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.tnt.TNTGames getTNTGames() {
-        return TNTGames;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.uhc.UHC getUHC() {
-        return UHC;
-    }
-
-    public com.kbrewster.hypixelapi.player.stats.gingerbread.GingerBread getGingerBread() {
-        return GingerBread;
-    }
 }

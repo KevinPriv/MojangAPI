@@ -2,181 +2,182 @@ package com.kbrewster.hypixelapi.player.stats.arcade;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import lombok.Getter;
 
 import java.util.List;
 
 public class Arcade {
 
     @SerializedName("coins")
-    @Expose
+    @Expose @Getter
     private long coins;
     @SerializedName("hints")
-    @Expose
+    @Expose @Getter
     private boolean hints;
     @SerializedName("sw_kills")
-    @Expose
+    @Expose @Getter
     private long swKills;
     @SerializedName("sw_shots_fired")
-    @Expose
+    @Expose @Getter
     private long swShotsFired;
     @SerializedName("sw_weekly_kills_b")
-    @Expose
+    @Expose @Getter
     private long swWeeklyKillsB;
     @SerializedName("sw_rebel_kills")
-    @Expose
+    @Expose @Getter
     private long swRebelKills;
     @SerializedName("sw_deaths")
-    @Expose
+    @Expose @Getter
     private long swDeaths;
     @SerializedName("sw_monthly_kills_a")
-    @Expose
+    @Expose @Getter
     private long swMonthlyKillsA;
     @SerializedName("stamp_level")
-    @Expose
+    @Expose @Getter
     private long stampLevel;
     @SerializedName("time_stamp")
-    @Expose
+    @Expose @Getter
     private long timeStamp;
     @SerializedName("sw_weekly_kills_a")
-    @Expose
+    @Expose @Getter
     private long swWeeklyKillsA;
     @SerializedName("sw_empire_kills")
-    @Expose
+    @Expose @Getter
     private long swEmpireKills;
     @SerializedName("music")
-    @Expose
+    @Expose @Getter
     private boolean music;
     @SerializedName("wins_buildbattle")
-    @Expose
+    @Expose @Getter
     private long winsBuildbattle;
     @SerializedName("max_wave")
-    @Expose
+    @Expose @Getter
     private long maxWave;
     @SerializedName("sw_monthly_kills_b")
-    @Expose
+    @Expose @Getter
     private long swMonthlyKillsB;
     @SerializedName("poop_collected")
-    @Expose
+    @Expose @Getter
     private long poopCollected;
     @SerializedName("wins_oneinthequiver")
-    @Expose
+    @Expose @Getter
     private long winsOneinthequiver;
     @SerializedName("deaths_oneinthequiver")
-    @Expose
+    @Expose @Getter
     private long deathsOneinthequiver;
     @SerializedName("bounty_kills_oneinthequiver")
-    @Expose
+    @Expose @Getter
     private long bountyKillsOneinthequiver;
     @SerializedName("kills_oneinthequiver")
-    @Expose
+    @Expose @Getter
     private long killsOneinthequiver;
     @SerializedName("kills_dayone")
-    @Expose
+    @Expose @Getter
     private long killsDayone;
     @SerializedName("headshots_dayone")
-    @Expose
+    @Expose @Getter
     private long headshotsDayone;
     @SerializedName("hitw_record_q")
-    @Expose
+    @Expose @Getter
     private long hitwRecordQ;
     @SerializedName("rounds_hole_in_the_wall")
-    @Expose
+    @Expose @Getter
     private long roundsHoleInTheWall;
     @SerializedName("monthly_coins_b")
-    @Expose
+    @Expose @Getter
     private long monthlyCoinsB;
     @SerializedName("weekly_coins_b")
-    @Expose
+    @Expose @Getter
     private long weeklyCoinsB;
     @SerializedName("weekly_coins_a")
-    @Expose
+    @Expose @Getter
     private long weeklyCoinsA;
     @SerializedName("monthly_coins_a")
-    @Expose
+    @Expose @Getter
     private long monthlyCoinsA;
     @SerializedName("rounds_simon_says")
-    @Expose
+    @Expose @Getter
     private long roundsSimonSays;
     @SerializedName("wins_simon_says")
-    @Expose
+    @Expose @Getter
     private long winsSimonSays;
     @SerializedName("buildbattle_loadout")
-    @Expose
+    @Expose @Getter
     private List<String> buildbattleLoadout = null;
     @SerializedName("kills_throw_out")
-    @Expose
+    @Expose @Getter
     private long killsThrowOut;
     @SerializedName("deaths_throw_out")
-    @Expose
+    @Expose @Getter
     private long deathsThrowOut;
     @SerializedName("kills_dragonwars2")
-    @Expose
+    @Expose @Getter
     private long killsDragonwars2;
     @SerializedName("wins_dragonwars2")
-    @Expose
+    @Expose @Getter
     private long winsDragonwars2;
     @SerializedName("melee_weapon")
-    @Expose
+    @Expose @Getter
     private String meleeWeapon;
     @SerializedName("packages")
-    @Expose
+    @Expose @Getter
     private List<String> packages = null;
     @SerializedName("bounty_head")
-    @Expose
+    @Expose @Getter
     private String bountyHead;
     @SerializedName("wins_soccer")
-    @Expose
+    @Expose @Getter
     private long winsSoccer;
     @SerializedName("powerkicks_soccer")
-    @Expose
+    @Expose @Getter
     private long powerkicksSoccer;
     @SerializedName("goals_soccer")
-    @Expose
+    @Expose @Getter
     private long goalsSoccer;
     @SerializedName("arrows_hit_mini_walls")
-    @Expose
+    @Expose @Getter
     private long arrowsHitMiniWalls;
     @SerializedName("final_kills_mini_walls")
-    @Expose
+    @Expose @Getter
     private long finalKillsMiniWalls;
     @SerializedName("kills_mini_walls")
-    @Expose
+    @Expose @Getter
     private long killsMiniWalls;
     @SerializedName("wins_mini_walls")
-    @Expose
+    @Expose @Getter
     private long winsMiniWalls;
     @SerializedName("deaths_mini_walls")
-    @Expose
+    @Expose @Getter
     private long deathsMiniWalls;
     @SerializedName("arrows_shot_mini_walls")
-    @Expose
+    @Expose @Getter
     private long arrowsShotMiniWalls;
     @SerializedName("miniwalls_activeKit")
-    @Expose
+    @Expose @Getter
     private String miniwallsActiveKit;
     @SerializedName("wither_damage_mini_walls")
-    @Expose
+    @Expose @Getter
     private long witherDamageMiniWalls;
     @SerializedName("wither_kills_mini_walls")
-    @Expose
+    @Expose @Getter
     private long witherKillsMiniWalls;
     @SerializedName("wins_farm_hunt")
-    @Expose
+    @Expose @Getter
     private long winsFarmHunt;
     @SerializedName("wins_party_3")
-    @Expose
+    @Expose @Getter
     private long winsParty3;
     @SerializedName("wins_party")
-    @Expose
+    @Expose @Getter
     private long winsParty;
     @SerializedName("dec2016_achievements2")
-    @Expose
+    @Expose @Getter
     private boolean dec2016Achievements2;
     @SerializedName("dec2016_achievements")
-    @Expose
+    @Expose @Getter
     private boolean dec2016Achievements;
     @SerializedName("wins_dayone")
-    @Expose
+    @Expose @Getter
     private long winsDayone;
 
     public long getCoins() {

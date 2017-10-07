@@ -18,7 +18,7 @@ import java.util.Objects;
  */
 public class HypixelAPI {
 
-    private String key = null;
+    private String key;
 
     private boolean success;
 

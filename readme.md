@@ -59,6 +59,22 @@ public class PlayerExample {
     }
 }
 ```
+Getting Mojang Status
+``` 
+public class MojangStatus {
+
+    public static void main(String[] args) {
+        try {
+            Map<String, String> status = MojangAPI.getStatus();
+            status.entrySet().forEach(set ->
+                    System.out.println(set.getKey() + " is " + set.getValue()));
+        } catch (IOException e) {
+            // Error getting JSON from URL
+            e.printStackTrace();
+        }
+    }
+}
+```
 Downloads
 -
 https://github.com/KevinPriv/HypixelApi4J/releases  

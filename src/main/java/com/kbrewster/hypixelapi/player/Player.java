@@ -2,8 +2,14 @@ package com.kbrewster.hypixelapi.player;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.kbrewster.hypixelapi.player.misc.Achievements;
+import com.kbrewster.hypixelapi.player.misc.HousingMeta;
+import com.kbrewster.hypixelapi.player.misc.SocialMedia;
+import com.kbrewster.hypixelapi.player.misc.VanityMeta;
 import com.kbrewster.hypixelapi.player.stats.Stats;
 import lombok.Getter;
+
+import java.util.List;
 
 @Getter
 public class Player {
@@ -165,6 +171,23 @@ public class Player {
     private String mostRecentGameType;
     @Expose 
     private Stats stats;
+    @Expose
+    private Achievements achievements;
+    @Expose
+    private List<String> knownAliases = null;
+    @Expose
+    private List<String> knownAliasesLower = null;
+    @SerializedName("housingMeta")
+    @Expose
+    private HousingMeta housingMeta;
+    @SerializedName("vanityMeta")
+    @Expose
+    private VanityMeta vanityMeta;
+    @SerializedName("socialMedia")
+    @Expose
+    private SocialMedia socialMedia;
+
+
 
 
 }

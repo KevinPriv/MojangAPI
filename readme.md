@@ -62,6 +62,38 @@ public class PlayerExample {
 Downloads
 -
 https://github.com/KevinPriv/HypixelApi4J/releases
+Gradle
+-
+```gradle
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+      Adding dependency
+	dependencies {
+            compile "com.github.KevinPriv:HypixelApi4J:API-1.0"
+      }
+```
+Maven
+-
+```maven
+	<repositories>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
+	</repositories>
+      
+      Adding dependency: 
+      <dependency>
+	    <groupId>com.github.User</groupId>
+	    <artifactId>Repo</artifactId>
+	    <version>Tag</version>
+	</dependency>
+
 
       
      

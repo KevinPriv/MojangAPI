@@ -5,6 +5,17 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'HypixelAPI - Jar',
+                'Implementation-Version': version
+    }
+    baseName = project.name + '- deps'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 repositories {
     mavenCentral()
 }

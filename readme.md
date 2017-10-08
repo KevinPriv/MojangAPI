@@ -72,14 +72,14 @@ Gradle
 		}
 	}
 
-      Adding dependency
+      Addin the dependency ->
 	dependencies {
             compile "com.github.KevinPriv:HypixelApi4J:API-1.0"
       }
 ```
 Maven
 -
-```maven
+```xml
 	<repositories>
 		<repository>
 		    <id>jitpack.io</id>
@@ -87,7 +87,7 @@ Maven
 		</repository>
 	</repositories>
       
-      Adding dependency: 
+      Adding the dependency ->
       <dependency>
 	    <groupId>com.github.User</groupId>
 	    <artifactId>Repo</artifactId>

@@ -20,7 +20,7 @@ public class Player {
     @Expose 
     private String channel;
     @Expose 
-    private String displayName;
+    private String displayname;
     @Expose 
     private long firstLogin;
     @Expose 

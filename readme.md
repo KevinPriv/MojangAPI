@@ -61,39 +61,71 @@ public class PlayerExample {
 ```
 Downloads
 -
-https://github.com/KevinPriv/HypixelApi4J/releases
+https://github.com/KevinPriv/HypixelApi4J/releases  
+
 Gradle
 -
 ```gradle
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    allprojects {
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
+    }
+```
+Adding the dependency:
+```gradle
+    dependencies {
+        compile "com.github.KevinPriv:HypixelApi4J:API-1.0"
+        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+        // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore
+        compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.7'
 
-      Addin the dependency ->
-	dependencies {
-            compile "com.github.KevinPriv:HypixelApi4J:API-1.0"
-      }
+    }
+
 ```
 Maven
 -
 ```xml
-	<repositories>
-		<repository>
-		    <id>jitpack.io</id>
-		    <url>https://jitpack.io</url>
-		</repository>
-	</repositories>
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
       
-      Adding the dependency ->
-      <dependency>
-	    <groupId>com.github.User</groupId>
-	    <artifactId>Repo</artifactId>
-	    <version>Tag</version>
-	</dependency>
+ ```
+ Adding the dependency:
+```xml
+<dependency>
+    <groupId>com.github.KevinPriv</groupId>
+    <artifactId>HypixelApi4J</artifactId>
+    <version>API-1.0</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.2</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.3</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpcore</artifactId>
+    <version>4.4.7</version>
+</dependency>
 
+
+
+```
 
       
      

@@ -60,7 +60,7 @@ public class PlayerExample {
 }
 ```
 Getting Mojang Status
-``` 
+```java
 public class MojangStatus {
 
     public static void main(String[] args) {

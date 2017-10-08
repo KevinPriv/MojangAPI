@@ -3,7 +3,7 @@ Parses the Hypixel API and allows easy access by getters
 
 Examples: 
 -
-###Getting Guild Data
+Getting Guild Data
 ```java
 public class GuildExample {
       public static final String API_KEY = "PUT_YOUR_KEY_HERE";
@@ -32,7 +32,7 @@ public class GuildExample {
       }
 }
 ```  
-###Getting Player Data
+Getting Player Data
 ```java
 public class PlayerExample {
     public static final String API_KEY = "PUT_YOUR_KEY_HERE";

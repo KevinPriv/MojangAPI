@@ -14,11 +14,20 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Allows access to the MojangAPI
+ * http://wiki.vg/Mojang_API
+ */
 public class MojangAPI {
 
     private final static String BASE_URL = "https://api.mojang.com";
     private final static String STATUS_URL = "https://status.mojang.com/check";
 
+    /**
+     * Gets Mojang's status
+     * @return
+     * @throws IOException
+     */
     public static Map<String, String> getStatus() throws IOException {
         Map<String, String> map = new TreeMap<>();
         String json = sendGet(STATUS_URL);
@@ -30,6 +39,12 @@ public class MojangAPI {
         return map;
     }
 
+    /**
+     * Gets Players UUID
+     * @param username
+     * @return UUID of the player
+     * @throws IOException
+     */
     public static String getUUIDByUsername(String username) throws IOException {
         String json = sendGet("https://api.mojang.com/users/profiles/minecraft/TheDestinyPig");
         JsonObject obj = new JsonParser().parse(json).getAsJsonObject();
@@ -38,19 +53,19 @@ public class MojangAPI {
         return obj.get("id").getAsString();
     }
 
-  //  public Profile getProfileByUsername() throws IOException {
-  //      String json = sendGet("https://api.mojang.com/users/profiles/minecraft/TheDestinyPig");
-  //  }
-    private static String sendGet(String url) throws IOException {
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpGet httpget = new HttpGet(url);
-            httpget.setHeader("Content-Type", "application/json");
-            ResponseHandler<String> responseHandler = responseHandler();
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            return responseBody;
-        }
+    /**
+     * TODO: http://wiki.vg/Mojang_API
+     * @return
+     * @throws IOException
+     */
+    private Profile getProfile() throws IOException {
+        return null;
     }
 
+    /**
+     * Gets HTTP response
+     * @return
+     */
     private static ResponseHandler<String> responseHandler() {
         return response -> {
             int status = response.getStatusLine().getStatusCode();
@@ -62,6 +77,29 @@ public class MojangAPI {
             }
         };
     }
+
+    /**
+     * Sends GET request
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    private static String sendGet(String url) throws IOException {
+        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
+            HttpGet httpget = new HttpGet(url);
+            httpget.setHeader("Content-Type", "application/json");
+            ResponseHandler<String> responseHandler = responseHandler();
+            String responseBody = httpclient.execute(httpget, responseHandler);
+            return responseBody;
+        }
+    }
+
+    /**
+     * Sends POST request
+     * @param url
+     * @return
+     * @throws IOException
+     */
     private static String sendPost(String url) throws IOException {
 
         try (CloseableHttpClient httpclient = HttpClients.createDefault()) {

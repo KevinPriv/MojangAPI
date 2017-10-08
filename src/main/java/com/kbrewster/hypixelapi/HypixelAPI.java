@@ -15,7 +15,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Allows to acess the api
+ * Allows to access to the Hypixel API
+ * https://api.hypixel.net/
  */
 public class HypixelAPI {
 
@@ -51,11 +52,23 @@ public class HypixelAPI {
         return gson.fromJson(player, Player.class);
     }
 
+    /**
+     * Gets Guild ID
+     * @param name
+     * @return
+     * @throws IOException
+     */
     public String getGuildID(String name) throws IOException {
         String uuid = MojangAPI.getUUIDByUsername(name);
         return getGuildIDByUUID(uuid);
     }
 
+    /**
+     * Gets Guild ID by UUID
+     * @param uuid
+     * @return
+     * @throws IOException
+     */
     public String getGuildIDByUUID(String uuid) throws IOException { ;
         String url = String.format(BASE_URL + "/findGuild?byUuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(new URL(url));
@@ -64,6 +77,12 @@ public class HypixelAPI {
         return json.get("guild").getAsString();
     }
 
+    /**
+     * Parses Guild Information into an instance of 'Guild'
+     * @param guildID
+     * @return
+     * @throws IOException
+     */
     public Guild getGuild(String guildID) throws IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/guild?key=%s&id=%s", key, guildID);

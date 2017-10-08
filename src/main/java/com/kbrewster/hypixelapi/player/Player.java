@@ -75,8 +75,9 @@ public class Player {
     private String pp;
     @Expose 
     private String mcVersionRp;
-
+    @Expose
     private boolean newMainTutorial;
+
     private boolean REWARD_FIND_JAMIETHEGEEK;
     private boolean REWARD_FIND_AGENTK;
     private boolean REWARD_FIND_REZZUS;

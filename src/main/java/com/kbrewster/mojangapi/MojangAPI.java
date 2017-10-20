@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -29,6 +30,7 @@ public class MojangAPI {
      * @throws IOException
      */
     public static Map<String, String> getStatus() throws IOException {
+        // TODO: Status Data Class?
         Map<String, String> map = new TreeMap<>();
         String json = sendGet(STATUS_URL);
         JsonArray status = new JsonParser().parse(json).getAsJsonArray();
@@ -40,13 +42,32 @@ public class MojangAPI {
     }
 
     /**
+     * Gets players past names vai UUID
+     * @param uuid
+     * @return
+     * @throws Exception
+     */
+    public static ArrayList<Name> getNamesByUuid(String uuid) throws Exception {
+        Gson gson = new Gson();
+        ArrayList<Name> names = new ArrayList<>();
+        System.out.println(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
+        String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
+        JsonArray arrayNames = new JsonParser().parse(json).getAsJsonArray();
+        arrayNames.forEach(obj -> {
+            Name name = gson.fromJson(obj, Name.class);
+            names.add(name);
+        });
+        return names;
+    }
+
+    /**
      * Gets Players UUID
      * @param username
      * @return UUID of the player
      * @throws IOException
      */
     public static String getUUIDByUsername(String username) throws IOException {
-        String json = sendGet("https://api.mojang.com/users/profiles/minecraft/TheDestinyPig");
+        String json = sendGet("https://api.mojang.com/users/profiles/minecraft/" + username);
         JsonObject obj = new JsonParser().parse(json).getAsJsonObject();
         if(obj.get("error") instanceof JsonNull)
             throw new APIException(obj.get("errorMessage").getAsString());
@@ -58,7 +79,18 @@ public class MojangAPI {
      * @return
      * @throws IOException
      */
-    private Profile getProfile() throws IOException {
+    private static MojangStatistics getStatistics() throws IOException {
+        String json = sendPost("https://api.mojang.com/orders/statistics");
+        JsonElement obj = new JsonParser().parse(json);
+        return new Gson().fromJson(obj, MojangStatistics.class);
+    }
+
+    /**
+     * TODO: http://wiki.vg/Mojang_API
+     * @return
+     * @throws IOException
+     */
+    private static Profile getProfile() throws IOException {
         return null;
     }
 

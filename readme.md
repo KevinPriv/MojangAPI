@@ -91,7 +91,7 @@ Gradle
 Adding the dependency:
 ```gradle
     dependencies {
-        compile "com.github.KevinPriv:HypixelApi4J:API-1.0"
+        compile "com.github.KevinPriv:HypixelApi4J:API-1.1"
         // https://mvnrepository.com/artifact/com.google.code.gson/gson
         compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
         // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
@@ -118,7 +118,7 @@ Maven
 <dependency>
     <groupId>com.github.KevinPriv</groupId>
     <artifactId>HypixelApi4J</artifactId>
-    <version>API-1.0</version>
+    <version>API-1.1</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>

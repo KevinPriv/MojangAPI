@@ -50,7 +50,6 @@ public class MojangAPI {
     public static ArrayList<Name> getNamesByUuid(String uuid) throws Exception {
         Gson gson = new Gson();
         ArrayList<Name> names = new ArrayList<>();
-        System.out.println(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
         String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
         JsonArray arrayNames = new JsonParser().parse(json).getAsJsonArray();
         arrayNames.forEach(obj -> {

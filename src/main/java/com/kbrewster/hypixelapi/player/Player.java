@@ -1,11 +1,12 @@
 package com.kbrewster.hypixelapi.player;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.kbrewster.hypixelapi.player.misc.*;
 import com.kbrewster.hypixelapi.player.stats.Stats;
 import lombok.Getter;
+
+import java.util.List;
 
 @Getter
 public class Player {
@@ -124,6 +125,12 @@ public class Player {
     @SerializedName("websiteSet")
     @Expose
     private boolean websiteSet;
+    @SerializedName("rank")
+    @Expose
+    private String rank;
+    @SerializedName("packageRank")
+    @Expose
+    private String packageRank;
     @SerializedName("newPackageRank")
     @Expose
     private String newPackageRank;
@@ -739,9 +746,6 @@ public class Player {
     @SerializedName("REWARD_FIND_NINJACHARLIET")
     @Expose
     private boolean rEWARDFINDNINJACHARLIET;
-   // @SerializedName("dmcrates-10-2016")
-   // @Expose
-  //  private Dmcrates102016 dmcrates102016;
     @SerializedName("levelingReward_169")
     @Expose
     private boolean levelingReward169;
@@ -751,24 +755,15 @@ public class Player {
     @SerializedName("quickjoin_uses")
     @Expose
     private long quickjoinUses;
- //   @SerializedName("halloween2016Cooldowns")
-  //  @Expose
- //   private Halloween2016Cooldowns halloween2016Cooldowns;
     @SerializedName("levelingReward_179")
     @Expose
     private boolean levelingReward179;
-  //  @SerializedName("dmcrates-11-2016")
-  //  @Expose
- //   private Dmcrates112016 dmcrates112016;
     @SerializedName("levelingReward_189")
     @Expose
     private boolean levelingReward189;
     @SerializedName("levelingReward_199")
     @Expose
     private boolean levelingReward199;
-  //  @SerializedName("dmcrates-12-2016")
-  //  @Expose
-   // private Dmcrates122016 dmcrates122016;
     @SerializedName("SANTA_QUEST_STARTED")
     @Expose
     private boolean sANTAQUESTSTARTED;
@@ -864,10 +859,7 @@ public class Player {
     private boolean xmas2016MAINLOBBY2;
     @SerializedName("SANTA_FINISHED")
     @Expose
-    private boolean sANTAFINISHED;
-  //  @SerializedName("holiday2016Cooldowns")
- //   @Expose
- //   private Holiday2016Cooldowns holiday2016Cooldowns;
+    private boolean santaFinished;
     @SerializedName("gifts_grinch")
     @Expose
     private long giftsGrinch;
@@ -877,9 +869,6 @@ public class Player {
     @SerializedName("levelingReward_219")
     @Expose
     private boolean levelingReward219;
- //   @SerializedName("dmcrates-1-2017")
-  //  @Expose
-  //  private Dmcrates12017 dmcrates12017;
     @SerializedName("levelingReward_224")
     @Expose
     private boolean levelingReward224;
@@ -892,12 +881,6 @@ public class Player {
  //   @SerializedName("compassStats")
   //  @Expose
  //   private CompassStats compassStats;
-  //  @SerializedName("dmcrates-2-2017")
-  //  @Expose
- //   private Dmcrates22017 dmcrates22017;
- //   @SerializedName("dmcrates-3-2017")
-//    @Expose
- //   private Dmcrates32017 dmcrates32017;
     @SerializedName("show_tip_holograms")
     @Expose
     private boolean showTipHolograms;
@@ -913,56 +896,41 @@ public class Player {
     @SerializedName("show_tntrun_actionbar_info")
     @Expose
     private boolean showTntrunActionbarInfo;
- //   @SerializedName("dmcrates-4-2017")
- //   @Expose
- //   private Dmcrates42017 dmcrates42017;
- //   @SerializedName("dmcrates-5-2017")
- //   @Expose
-  //  private Dmcrates52017 dmcrates52017;
     @SerializedName("spec_night_vision")
     @Expose
     private boolean specNightVision;
- //   @SerializedName("dmcrates-6-2017")
- //   @Expose
-//    private Dmcrates62017 dmcrates62017;
- //   @SerializedName("summer2017Cooldowns")
- //   @Expose
- //   private Summer2017Cooldowns summer2017Cooldowns;
     @SerializedName("lastLogout")
     @Expose
     private long lastLogout;
    // @SerializedName("challenges")
    // @Expose
    // private Challenges challenges;
-   // @SerializedName("dmcrates-7-2017")
-  //  @Expose
-  //  private Dmcrates72017 dmcrates72017;
     @SerializedName("REWARD_FIND_ORANGEMARSHALL")
     @Expose
     private boolean rEWARDFINDORANGEMARSHALL;
     @SerializedName("networkExpNew")
     @Expose
     private long networkExpNew;
-  //  @SerializedName("dmcrates-8-2017")
-  //  @Expose
-  //  private Dmcrates82017 dmcrates82017;
     @SerializedName("socialMedia")
     @Expose
     private SocialMedia socialMedia;
- //   @SerializedName("dmcrates-9-2017")
- //   @Expose
- //   private Dmcrates92017 dmcrates92017;
     @SerializedName("network_update_book")
     @Expose
     private String networkUpdateBook;
- //   @SerializedName("dmcrates-10-2017")
- //   @Expose
- //   private Dmcrates102017 dmcrates102017;
     @SerializedName("mostRecentGameType")
     @Expose
     private String mostRecentGameType;
     @SerializedName("currentHat")
     @Expose
     private String currentHat;
+    @SerializedName("currentGadget")
+    @Expose
+    private String currentGadget;
 
+    public String getCurrentRank() {
+        if (rank != null) return rank;
+        if (newPackageRank != null) return newPackageRank;
+        if (packageRank != null) return packageRank;
+        return "NONE";
+    }
 }

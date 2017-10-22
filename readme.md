@@ -59,17 +59,30 @@ public class PlayerExample {
     }
 }
 ```
-Getting Mojang Status
+Mojang API Requests
 ```java
-public class MojangStatus {
+public class MojangAPIExample {
 
     public static void main(String[] args) {
         try {
-            Map<String, String> status = MojangAPI.getStatus();
-            status.entrySet().forEach(set ->
-                    System.out.println(set.getKey() + " is " + set.getValue()));
-        } catch (IOException e) {
-            // Error getting JSON from URL
+            System.out.println("--Name History--");
+            MojangAPI.getNameHistory("8233b1e5bd74441baa34ee812263cca9").forEach(name -> {
+                System.out.println(name.getName());
+        });
+
+            System.out.println("--Website Status--");
+            MojangAPI.getStatus().forEach((url, status) -> System.out.println(url + " is " + status));
+
+            System.out.println("--Sale Statistics--");
+            System.out.println(MojangAPI.getStatistics(MetricKeys.ITEM_COBOLT).getTotal());
+            System.out.println(MojangAPI.getStatistics(MetricKeys.ITEM_MINECRAFT).getSaleVelocityPerSeconds());
+            System.out.println(MojangAPI.getStatistics(MetricKeys.ITEM_SCROLLS).getLastDay());
+            System.out.println(MojangAPI.getStatistics(MetricKeys.PREPAID_MINECRAFT).getLastDay());
+
+            System.out.println("--UUID from Username--");
+            System.out.println(MojangAPI.getUUID("TheDestinyPig"));
+
+        } catch(Exception e) {
             e.printStackTrace();
         }
     }
@@ -91,7 +104,7 @@ Gradle
 Adding the dependency:
 ```gradle
     dependencies {
-        compile "com.github.KevinPriv:HypixelApi4J:API-1.1"
+        compile "com.github.KevinPriv:HypixelApi4J:API-1.2"
         // https://mvnrepository.com/artifact/com.google.code.gson/gson
         compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
         // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
@@ -118,7 +131,7 @@ Maven
 <dependency>
     <groupId>com.github.KevinPriv</groupId>
     <artifactId>HypixelApi4J</artifactId>
-    <version>API-1.1</version>
+    <version>API-1.2</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>

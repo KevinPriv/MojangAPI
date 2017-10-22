@@ -9,7 +9,7 @@ public class MojangStatistics {
     @SerializedName("total")
     @Expose
     private long total;
-    @SerializedName("last24_h")
+    @SerializedName("last24h")
     @Expose
     private long lastDay;
     @SerializedName("saleVelocityPerSeconds")

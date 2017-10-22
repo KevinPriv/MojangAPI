@@ -1,15 +1,9 @@
 package com.kbrewster.mojangapi;
 
 import com.google.gson.*;
+import com.kbrewster.API;
 import com.kbrewster.hypixelapi.exceptions.APIException;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
@@ -19,7 +13,8 @@ import java.util.TreeMap;
  * Allows access to the MojangAPI
  * http://wiki.vg/Mojang_API
  */
-public class MojangAPI {
+@API.Reference(apiName = "Mojang API", apiVersion = "1.1.2")
+public class MojangAPI extends API {
 
     private final static String BASE_URL = "https://api.mojang.com";
     private final static String STATUS_URL = "https://status.mojang.com/check";
@@ -47,7 +42,7 @@ public class MojangAPI {
      * @return
      * @throws Exception
      */
-    public static ArrayList<Name> getNamesByUuid(String uuid) throws Exception {
+    public static ArrayList<Name> getNameHistory(String uuid) throws Exception {
         Gson gson = new Gson();
         ArrayList<Name> names = new ArrayList<>();
         String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
@@ -65,7 +60,7 @@ public class MojangAPI {
      * @return UUID of the player
      * @throws IOException
      */
-    public static String getUUIDByUsername(String username) throws IOException {
+    public static String getUUID(String username) throws IOException, APIException {
         String json = sendGet("https://api.mojang.com/users/profiles/minecraft/" + username);
         JsonObject obj = new JsonParser().parse(json).getAsJsonObject();
         if(obj.get("error") instanceof JsonNull)
@@ -78,8 +73,8 @@ public class MojangAPI {
      * @return
      * @throws IOException
      */
-    private static MojangStatistics getStatistics() throws IOException {
-        String json = sendPost("https://api.mojang.com/orders/statistics");
+    public static MojangStatistics getStatistics(MetricKeys key) throws IOException {
+        String json = sendPost("https://api.mojang.com/orders/statistics", "{\"metricKeys\": [\"" + key.getKey() + "\"]}");
         JsonElement obj = new JsonParser().parse(json);
         return new Gson().fromJson(obj, MojangStatistics.class);
     }
@@ -93,49 +88,4 @@ public class MojangAPI {
         return null;
     }
 
-    /**
-     * Gets HTTP response
-     * @return
-     */
-    private static ResponseHandler<String> responseHandler() {
-        return response -> {
-            int status = response.getStatusLine().getStatusCode();
-            if (status >= 200 && status < 300) {
-                HttpEntity entity = response.getEntity();
-                return entity != null ? EntityUtils.toString(entity) : null;
-            } else {
-                throw new ClientProtocolException("Unexpected response status: " + status);
-            }
-        };
-    }
-
-    /**
-     * Sends GET request
-     * @param url
-     * @return
-     * @throws IOException
-     */
-    private static String sendGet(String url) throws IOException {
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpGet httpget = new HttpGet(url);
-            httpget.setHeader("Content-Type", "application/json");
-            ResponseHandler<String> responseHandler = responseHandler();
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            return responseBody;
-        }
-    }
-
-    /**
-     * Sends POST request
-     * @param url
-     * @return
-     * @throws IOException
-     */
-    private static String sendPost(String url) throws IOException {
-
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpPost httpPost = new HttpPost(url);
-            return httpclient.execute(httpPost, responseHandler());
-        }
-    }
 }

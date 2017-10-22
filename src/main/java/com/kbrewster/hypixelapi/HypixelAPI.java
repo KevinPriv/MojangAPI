@@ -1,33 +1,35 @@
 package com.kbrewster.hypixelapi;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.kbrewster.API;
 import com.kbrewster.hypixelapi.exceptions.APIException;
 import com.kbrewster.hypixelapi.exceptions.InvalidGuildException;
 import com.kbrewster.hypixelapi.exceptions.InvalidPlayerException;
 import com.kbrewster.hypixelapi.guild.Guild;
+import com.kbrewster.hypixelapi.key.APIKey;
 import com.kbrewster.hypixelapi.player.Player;
 import com.kbrewster.mojangapi.MojangAPI;
-import org.apache.http.HttpEntity;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.Charset;
+import java.io.IOException;
 
 /**
  * Allows to access to the Hypixel API
  * https://api.hypixel.net/
  */
-public class HypixelAPI {
+@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.1")
+public class HypixelAPI extends API {
 
+    /**
+     * API's URL
+     */
     private final String BASE_URL = "https://api.hypixel.net";
+
+    /**
+     * For some reason Hypixel does not accept application requests
+     */
     private final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36";
 
     private String key;
@@ -50,7 +52,7 @@ public class HypixelAPI {
     public Player getPlayer(String name) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?name=%s&key=%s", name, key);
-        JsonObject json = readJsonUrl(new URL(url));
+        JsonObject json = readJsonUrl(url);
         if(!json.get("success").getAsBoolean())
             throw new APIException(json.get("cause").getAsString());
         JsonElement player = json.get("player");
@@ -69,7 +71,7 @@ public class HypixelAPI {
     public Player getPlayerByUuid(String uuid) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?uuid=%s&key=%s", uuid, key);
-        JsonObject json = readJsonUrl(new URL(url));
+        JsonObject json = readJsonUrl(url);
         if(!json.get("success").getAsBoolean())
             throw new APIException(json.get("cause").getAsString());
         JsonElement player = json.get("player");
@@ -84,8 +86,8 @@ public class HypixelAPI {
      * @return
      * @throws IOException
      */
-    public String getGuildID(String name) throws IOException {
-        String uuid = MojangAPI.getUUIDByUsername(name);
+    public String getGuildID(String name) throws IOException, APIException {
+        String uuid = MojangAPI.getUUID(name);
         return getGuildIDByUUID(uuid);
     }
 
@@ -95,10 +97,10 @@ public class HypixelAPI {
      * @return
      * @throws IOException
      */
-    public Guild getGuild(String guildID) throws IOException {
+    public Guild getGuild(String guildID) throws IOException, APIException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/guild?key=%s&id=%s", key, guildID);
-        JsonObject json = readJsonUrl(new URL(url));
+        JsonObject json = readJsonUrl(url);
         if(!json.get("success").getAsBoolean())
             throw new APIException(json.get("cause").getAsString());
         JsonElement guild = json.get("guild");
@@ -113,28 +115,24 @@ public class HypixelAPI {
      * @return
      * @throws IOException
      */
-    public String getGuildIDByUUID(String uuid) throws IOException {
+    public String getGuildIDByUUID(String uuid) throws IOException, APIException {
         String url = String.format(BASE_URL + "/findGuild?byUuid=%s&key=%s", uuid, key);
-        JsonObject json = readUrl(url);
+        JsonObject json = readJsonUrl(url);
         if(!json.get("success").getAsBoolean())
             throw new APIException(json.get("cause").getAsString());
         return json.get("guild").getAsString();
     }
 
-    /**
-     * Reads JSON from a URL
-     * @param url URL request is sent to
-     * @return JsonObject
-     * @throws IOException
-     */
-    private JsonObject readJsonUrl(URL url) throws IOException {
-        HttpURLConnection request = (HttpURLConnection) url.openConnection();
-        request.setRequestProperty("User-Agent", USER_AGENT);
-        request.connect();
-        // Convert to a JSON object to print data
-        JsonParser jp = new JsonParser(); //from gson
-        JsonElement parsedInputStream = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
-        return parsedInputStream.getAsJsonObject();
+    public APIKey getKeyInfo() throws IOException, APIException {
+        Gson gson = new Gson();
+        String url = String.format(BASE_URL + "/key?key=%s", key);
+        JsonObject json = readJsonUrl(url);
+        if (!json.get("success").getAsBoolean())
+            throw new APIException(json.get("cause").getAsString());
+        JsonElement record = json.get("record");
+        if (record.isJsonNull())
+            throw new APIException("No record found!");
+        return gson.fromJson(record, APIKey.class);
     }
 
     /**
@@ -142,24 +140,8 @@ public class HypixelAPI {
      * @param url
      * @return
      */
-    private static JsonObject readUrl(String url) throws IOException {
-        try (CloseableHttpClient httpclient = HttpClients.createDefault()) {
-            HttpGet httpget = new HttpGet(url);
-            System.out.println("Executing request " + httpget.getRequestLine());
-
-            // Create a custom response handler
-            ResponseHandler<String> responseHandler = response -> {
-                int status = response.getStatusLine().getStatusCode();
-                if (status >= 200 && status < 300) {
-                    HttpEntity entity = response.getEntity();
-                    return entity != null ? EntityUtils.toString(entity) : null;
-                } else {
-                    throw new ClientProtocolException("Unexpected response status: " + status);
-                }
-            };
-            String responseBody = httpclient.execute(httpget, responseHandler);
-            JsonElement jelement = new JsonParser().parse(responseBody);
-            return jelement.getAsJsonObject();
-        }
+    private JsonObject readJsonUrl(String url) throws IOException {
+        JsonElement jElement = new JsonParser().parse(sendGet(url, USER_AGENT));
+        return jElement.getAsJsonObject();
     }
 }

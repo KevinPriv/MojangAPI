@@ -19,7 +19,7 @@ import java.io.IOException;
  * Allows to access to the Hypixel API
  * https://api.hypixel.net/
  */
-@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.1")
+@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.2")
 public class HypixelAPI extends API {
 
     /**

@@ -2,7 +2,8 @@ package com.kbrewster.mojangapi;
 
 import com.google.gson.*;
 import com.kbrewster.API;
-import com.kbrewster.hypixelapi.exceptions.APIException;
+import com.kbrewster.exceptions.APIException;
+import com.kbrewster.exceptions.InvalidPlayerException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,9 +61,12 @@ public class MojangAPI extends API {
      * @return UUID of the player
      * @throws IOException
      */
-    public static String getUUID(String username) throws IOException, APIException {
+    public static String getUUID(String username) throws IOException, APIException, InvalidPlayerException {
         String json = sendGet("https://api.mojang.com/users/profiles/minecraft/" + username);
-        JsonObject obj = new JsonParser().parse(json).getAsJsonObject();
+        JsonElement parse = new JsonParser().parse(json);
+        if (parse.isJsonNull())
+            throw new InvalidPlayerException();
+        JsonObject obj = parse.getAsJsonObject();
         if(obj.get("error") instanceof JsonNull)
             throw new APIException(obj.get("errorMessage").getAsString());
         return obj.get("id").getAsString();

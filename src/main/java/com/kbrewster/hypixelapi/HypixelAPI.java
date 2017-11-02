@@ -5,15 +5,22 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.kbrewster.API;
-import com.kbrewster.hypixelapi.exceptions.APIException;
-import com.kbrewster.hypixelapi.exceptions.InvalidGuildException;
-import com.kbrewster.hypixelapi.exceptions.InvalidPlayerException;
+import com.kbrewster.exceptions.APIException;
+import com.kbrewster.exceptions.InvalidGuildException;
+import com.kbrewster.exceptions.InvalidPlayerException;
+import com.kbrewster.hypixelapi.boosters.Booster;
+import com.kbrewster.hypixelapi.friends.Friend;
 import com.kbrewster.hypixelapi.guild.Guild;
 import com.kbrewster.hypixelapi.key.APIKey;
+import com.kbrewster.hypixelapi.leaderboards.Leaderboard;
+import com.kbrewster.hypixelapi.leaderboards.Leaderboards;
 import com.kbrewster.hypixelapi.player.Player;
+import com.kbrewster.hypixelapi.session.Session;
 import com.kbrewster.mojangapi.MojangAPI;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Allows to access to the Hypixel API
@@ -68,7 +75,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException Player Name does not exist
      * @throws IOException Error reading json
      */
-    public Player getPlayerByUuid(String uuid) throws APIException, InvalidPlayerException, IOException {
+    public Player getPlayerByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?uuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
@@ -79,6 +86,129 @@ public class HypixelAPI extends API {
             throw new InvalidPlayerException();
         return gson.fromJson(player, Player.class);
     }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @param name
+     * @return
+     * @throws APIException
+     * @throws InvalidPlayerException
+     * @throws IOException
+     */
+    public Session getSession(String name) throws APIException, InvalidPlayerException, IOException {
+        String uuid = MojangAPI.getUUID(name);
+        return getSessionByUUID(uuid);
+    }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @param uuid
+     * @return
+     * @throws APIException
+     * @throws InvalidPlayerException
+     * @throws IOException
+     */
+    public Session getSessionByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+        Gson gson = new Gson();
+        String url = String.format(BASE_URL + "/session?uuid=%s&key=%s", uuid, key);
+        JsonObject json = readJsonUrl(url);
+        if (!json.get("success").getAsBoolean())
+            throw new APIException(json.get("cause").getAsString());
+        JsonElement session = json.get("session");
+        if (session.isJsonNull())
+            throw new InvalidPlayerException();
+        return gson.fromJson(session, Session.class);
+    }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @param name
+     * @return
+     * @throws APIException
+     * @throws InvalidPlayerException
+     * @throws IOException
+     */
+    public List<Friend> getFriends(String name) throws APIException, InvalidPlayerException, IOException {
+        String uuid = MojangAPI.getUUID(name);
+        return getFriendsByUUID(uuid);
+    }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @param uuid
+     * @return
+     * @throws APIException
+     * @throws InvalidPlayerException
+     * @throws IOException
+     */
+    public List<Friend> getFriendsByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+        Gson gson = new Gson();
+        ArrayList<Friend> friends = new ArrayList<>();
+        String url = String.format(BASE_URL + "/friends?uuid=%s&key=%s", uuid, key);
+        JsonObject json = readJsonUrl(url);
+        if (!json.get("success").getAsBoolean())
+            throw new APIException(json.get("cause").getAsString());
+        JsonElement records = json.get("records");
+        if (records.isJsonNull())
+            throw new InvalidPlayerException();
+        records.getAsJsonArray().forEach(jsonElement -> {
+            friends.add(gson.fromJson(jsonElement, Friend.class));
+        });
+        return friends;
+    }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @return
+     * @throws APIException
+     * @throws IOException
+     */
+    public List<Booster> getBoosters() throws APIException, IOException {
+        Gson gson = new Gson();
+        ArrayList<Booster> boosters = new ArrayList<>();
+        String url = String.format(BASE_URL + "/boosters?key=%s", key);
+        JsonObject json = readJsonUrl(url);
+        if (!json.get("success").getAsBoolean())
+            throw new APIException(json.get("cause").getAsString());
+        JsonElement records = json.get("boosters");
+        if (records.isJsonNull())
+            throw new APIException("No boosters found!");
+        records.getAsJsonArray().forEach(jsonElement -> {
+            boosters.add(gson.fromJson(jsonElement, Booster.class));
+        });
+        return boosters;
+    }
+
+    /**
+     * TODO: JAVADOC
+     *
+     * @param leaderboard
+     * @return
+     * @throws APIException
+     * @throws IOException
+     */
+    public List<Leaderboard> getLeaderboard(Leaderboards leaderboard) throws APIException, IOException {
+        Gson gson = new Gson();
+        ArrayList<Leaderboard> leaderboards = new ArrayList<>();
+        String url = String.format(BASE_URL + "/leaderboards?key=%s", key);
+        JsonObject json = readJsonUrl(url);
+        if (!json.get("success").getAsBoolean())
+            throw new APIException(json.get("cause").getAsString());
+        JsonObject lb = json.getAsJsonObject("leaderboards");
+        System.out.println(leaderboard.name());
+        lb.getAsJsonArray(leaderboard.name()).forEach(element -> {
+            leaderboards.add(gson.fromJson(element, Leaderboard.class));
+        });
+
+        return leaderboards;
+    }
+
+
 
     /**
      * Gets Guild ID
@@ -123,6 +253,12 @@ public class HypixelAPI extends API {
         return json.get("guild").getAsString();
     }
 
+    /**
+     * TODO: JAVADOC
+     * @return key info @see{APIKey}
+     * @throws IOException
+     * @throws APIException
+     */
     public APIKey getKeyInfo() throws IOException, APIException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/key?key=%s", key);
@@ -136,7 +272,7 @@ public class HypixelAPI extends API {
     }
 
     /**
-     * Reads URL
+     * TODO: JAVADOC
      * @param url
      * @return
      */

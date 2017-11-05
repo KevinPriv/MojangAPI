@@ -38,16 +38,41 @@ public class MojangAPI extends API {
     }
 
     /**
-     * Gets players past names vai UUID
+     * Gets players username by their uuid
+     *
      * @param uuid
      * @return
      * @throws Exception
      */
-    public static ArrayList<Name> getNameHistory(String uuid) throws Exception {
+    public static String getName(String uuid) throws Exception {
+        ArrayList<Name> names = getNameHistoryByUUID(uuid);
+        return names.get(names.size() - 1).getName();
+    }
+
+    /**
+     * Gets players past names vai username
+     * @param username
+     * @return
+     * @throws Exception
+     */
+    public static ArrayList<Name> getNameHistory(String username) throws Exception {
+        return getNameHistory(getUUID(username));
+    }
+
+    /**
+     * Gets players past names vai UUID
+     *
+     * @param uuid
+     * @return
+     * @throws Exception
+     */
+    public static ArrayList<Name> getNameHistoryByUUID(String uuid) throws Exception {
         Gson gson = new Gson();
         ArrayList<Name> names = new ArrayList<>();
         String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", uuid));
-        JsonArray arrayNames = new JsonParser().parse(json).getAsJsonArray();
+        JsonElement parser = new JsonParser().parse(json);
+        if (parser.isJsonNull()) throw new InvalidPlayerException();
+        JsonArray arrayNames = parser.getAsJsonArray();
         arrayNames.forEach(obj -> {
             Name name = gson.fromJson(obj, Name.class);
             names.add(name);

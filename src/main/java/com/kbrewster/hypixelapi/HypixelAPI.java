@@ -14,7 +14,7 @@ import com.kbrewster.hypixelapi.guild.Guild;
 import com.kbrewster.hypixelapi.key.APIKey;
 import com.kbrewster.hypixelapi.leaderboards.Leaderboard;
 import com.kbrewster.hypixelapi.leaderboards.Leaderboards;
-import com.kbrewster.hypixelapi.player.Player;
+import com.kbrewster.hypixelapi.player.HypixelPlayer;
 import com.kbrewster.hypixelapi.session.Session;
 import com.kbrewster.mojangapi.MojangAPI;
 
@@ -53,10 +53,10 @@ public class HypixelAPI extends API {
      * Gets [name]'s Hypixel player information
      * @param name The player you want to get the information of
      * @throws APIException API Key is invalid
-     * @throws InvalidPlayerException Player Name does not exist
+     * @throws InvalidPlayerException HypixelPlayer Name does not exist
      * @throws IOException Error reading json
      */
-    public Player getPlayer(String name) throws APIException, InvalidPlayerException, IOException {
+    public HypixelPlayer getPlayer(String name) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?name=%s&key=%s", name, key);
         JsonObject json = readJsonUrl(url);
@@ -65,17 +65,17 @@ public class HypixelAPI extends API {
         JsonElement player = json.get("player");
         if (player.isJsonNull())
             throw new InvalidPlayerException();
-        return gson.fromJson(player, Player.class);
+        return gson.fromJson(player, HypixelPlayer.class);
     }
 
     /**
      * Gets [name]'s Hypixel player information
      * @param uuid The player you want to get the information of
      * @throws APIException API Key is invalid
-     * @throws InvalidPlayerException Player Name does not exist
+     * @throws InvalidPlayerException HypixelPlayer Name does not exist
      * @throws IOException Error reading json
      */
-    public Player getPlayerByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+    public HypixelPlayer getPlayerByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?uuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
@@ -84,7 +84,7 @@ public class HypixelAPI extends API {
         JsonElement player = json.get("player");
         if (player.isJsonNull())
             throw new InvalidPlayerException();
-        return gson.fromJson(player, Player.class);
+        return gson.fromJson(player, HypixelPlayer.class);
     }
 
     /**
@@ -96,7 +96,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException
      * @throws IOException
      */
-    public Session getSession(String name) throws APIException, InvalidPlayerException, IOException {
+    public Session getSession(String name) throws APIException, IOException {
         String uuid = MojangAPI.getUUID(name);
         return getSessionByUUID(uuid);
     }
@@ -110,7 +110,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException
      * @throws IOException
      */
-    public Session getSessionByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+    public Session getSessionByUUID(String uuid) throws APIException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/session?uuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
@@ -118,7 +118,7 @@ public class HypixelAPI extends API {
             throw new APIException(json.get("cause").getAsString());
         JsonElement session = json.get("session");
         if (session.isJsonNull())
-            throw new InvalidPlayerException();
+            throw new APIException("No session found!");
         return gson.fromJson(session, Session.class);
     }
 

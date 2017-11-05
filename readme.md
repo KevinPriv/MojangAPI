@@ -104,13 +104,9 @@ Gradle
 Adding the dependency:
 ```gradle
     dependencies {
-        compile "com.github.KevinPriv:HypixelApi4J:API-1.2"
-        // https://mvnrepository.com/artifact/com.google.code.gson/gson
+        compile "com.github.KevinPriv:HypixelApi4J:API-1.4"
         compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
-        // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-        compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
-        // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore
-        compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.7'
+        compile 'com.squareup.okhttp3:okhttp:3.9.0'
 
     }
 
@@ -131,28 +127,13 @@ Maven
 <dependency>
     <groupId>com.github.KevinPriv</groupId>
     <artifactId>HypixelApi4J</artifactId>
-    <version>API-1.2</version>
+    <version>API-1.4</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
 <dependency>
-    <groupId>com.google.code.gson</groupId>
-    <artifactId>gson</artifactId>
-    <version>2.8.2</version>
+    <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp</artifactId>
+    <version>3.9.0</version>
 </dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpclient</artifactId>
-    <version>4.5.3</version>
-</dependency>
-<!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpcore -->
-<dependency>
-    <groupId>org.apache.httpcomponents</groupId>
-    <artifactId>httpcore</artifactId>
-    <version>4.4.7</version>
-</dependency>
-
-
 
 ```
 

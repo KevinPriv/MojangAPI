@@ -1,7 +1,7 @@
 package com.kbrewster.mojangapi;
 
 /**
- * TODO: Profile of Player from Mojang API
+ * TODO: Profile of HypixelPlayer from Mojang API
  */
 public class Profile {
 }

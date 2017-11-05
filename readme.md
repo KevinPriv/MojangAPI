@@ -42,11 +42,16 @@ public class PlayerExample {
             // Creates an instance of the Hypixel API
             HypixelAPI api = new HypixelAPI(API_KEY);
             // Creates an instance of the player
-            Player player = api.getPlayer("Sk1er");
-            System.out.println("Name: " + player.getPlayername());
-            System.out.println("Level: " + player.getNetworkLevel());
+            HypixelPlayer player = api.getPlayer("Sk1er");
+            System.out.println("Name: " + player.getDisplayName());
+            System.out.println("Rank: " + player.getCurrentRank());
+            System.out.println("Level: " + player.getAbsoluteLevel());
             System.out.println("Last Version: " + player.getMcVersionRp());
-            System.out.println("Youtube: " + player.getSocialMedia().getLinks().getYoutube());
+            String yt = player.getSocialMedia().getLinks().getYoutube();
+            if(yt != null) {
+                System.out.println("Youtube: " + yt);
+            }
+            
         } catch (IOException e) {
             // Error getting JSON from URL
             e.printStackTrace();

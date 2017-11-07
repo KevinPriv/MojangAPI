@@ -139,6 +139,11 @@ Maven
     <artifactId>okhttp</artifactId>
     <version>3.9.0</version>
 </dependency>
+<dependency>
+    <groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.8.2</version>
+</dependency>
 
 ```
 

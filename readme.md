@@ -43,7 +43,7 @@ public class PlayerExample {
             HypixelAPI api = new HypixelAPI(API_KEY);
             // Creates an instance of the player
             HypixelPlayer player = api.getPlayer("Sk1er");
-            System.out.println("Name: " + player.getDisplayName());
+            System.out.println("Name: " + player.getDisplayname());
             System.out.println("Rank: " + player.getCurrentRank());
             System.out.println("Level: " + player.getAbsoluteLevel());
             System.out.println("Last Version: " + player.getMcVersionRp());

@@ -1,4 +1,4 @@
-package me.kbrewster.mojangapi;
+package me.kbrewster.mojangapi.stats;
 
 import lombok.Getter;
 

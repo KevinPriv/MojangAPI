@@ -447,12 +447,19 @@ public class HypixelPlayer {
     @SerializedName("currentGadget")
     @Expose
     private String currentGadget;
+    @SerializedName("monthlyPackageRank")
+    @Expose
+    private String monthlyPackageRank;
+    @SerializedName("lastNick")
+    @Expose
+    private String lastNick;
 
     public double getAbsoluteLevel() {
         return ILeveling.getExactLevel(networkExp + ILeveling.getTotalExpToFullLevel(networkLevel + 1));
     }
 
     public String getCurrentRank() {
+        if (monthlyPackageRank != null) return monthlyPackageRank;
         if (rank != null && !rank.equals("NORMAL")) return rank;
         if (newPackageRank != null) return newPackageRank;
         if (packageRank != null) return packageRank;

@@ -21,12 +21,13 @@ import me.kbrewster.mojangapi.MojangAPI;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Allows to access to the Hypixel API
  * https://api.hypixel.net/
  */
-@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.2")
+@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.4")
 public class HypixelAPI extends API {
 
     /**
@@ -37,7 +38,7 @@ public class HypixelAPI extends API {
     /**
      * For some reason Hypixel does not accept application requests
      */
-    private final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36";
+    private final String USER_AGENT = getApiName() + "/v" + getApiVersion();
 
     private String key;
 
@@ -75,7 +76,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException HypixelPlayer Name does not exist
      * @throws IOException Error reading json
      */
-    public HypixelPlayer getPlayerByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+    public HypixelPlayer getPlayer(UUID uuid) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/player?uuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
@@ -97,8 +98,8 @@ public class HypixelAPI extends API {
      * @throws IOException
      */
     public Session getSession(String name) throws APIException, IOException {
-        String uuid = MojangAPI.getUUID(name);
-        return getSessionByUUID(uuid);
+        UUID uuid = MojangAPI.getUUID(name);
+        return getSession(uuid);
     }
 
     /**
@@ -110,7 +111,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException
      * @throws IOException
      */
-    public Session getSessionByUUID(String uuid) throws APIException, IOException {
+    public Session getSession(UUID uuid) throws APIException, IOException {
         Gson gson = new Gson();
         String url = String.format(BASE_URL + "/session?uuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
@@ -132,8 +133,8 @@ public class HypixelAPI extends API {
      * @throws IOException
      */
     public List<Friend> getFriends(String name) throws APIException, InvalidPlayerException, IOException {
-        String uuid = MojangAPI.getUUID(name);
-        return getFriendsByUUID(uuid);
+        UUID uuid = MojangAPI.getUUID(name);
+        return getFriends(uuid);
     }
 
     /**
@@ -145,7 +146,7 @@ public class HypixelAPI extends API {
      * @throws InvalidPlayerException
      * @throws IOException
      */
-    public List<Friend> getFriendsByUUID(String uuid) throws APIException, InvalidPlayerException, IOException {
+    public List<Friend> getFriends(UUID uuid) throws APIException, InvalidPlayerException, IOException {
         Gson gson = new Gson();
         ArrayList<Friend> friends = new ArrayList<>();
         String url = String.format(BASE_URL + "/friends?uuid=%s&key=%s", uuid, key);
@@ -217,8 +218,8 @@ public class HypixelAPI extends API {
      * @throws IOException
      */
     public String getGuildID(String name) throws IOException, APIException {
-        String uuid = MojangAPI.getUUID(name);
-        return getGuildIDByUUID(uuid);
+        UUID uuid = MojangAPI.getUUID(name);
+        return getGuildID(uuid);
     }
 
     /**
@@ -245,7 +246,7 @@ public class HypixelAPI extends API {
      * @return
      * @throws IOException
      */
-    public String getGuildIDByUUID(String uuid) throws IOException, APIException {
+    public String getGuildID(UUID uuid) throws IOException, APIException {
         String url = String.format(BASE_URL + "/findGuild?byUuid=%s&key=%s", uuid, key);
         JsonObject json = readJsonUrl(url);
         if(!json.get("success").getAsBoolean())

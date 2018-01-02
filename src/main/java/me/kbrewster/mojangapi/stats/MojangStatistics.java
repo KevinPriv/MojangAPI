@@ -1,4 +1,4 @@
-package me.kbrewster.mojangapi;
+package me.kbrewster.mojangapi.stats;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

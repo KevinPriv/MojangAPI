@@ -37,7 +37,7 @@ public class MojangAPI extends API {
         Map<String, String> map = new TreeMap<>();
         String json = sendGet(STATUS_URL);
         JsonArray status = new JsonParser().parse(json).getAsJsonArray();
-        for(JsonElement element: status) {
+        for (JsonElement element : status) {
             JsonObject obj = element.getAsJsonObject();
             obj.entrySet().forEach(s -> map.put(s.getKey(), s.getValue().getAsString()));
         }
@@ -54,7 +54,7 @@ public class MojangAPI extends API {
         return new Gson().fromJson(jsonObject, Profile.class);
     }
 
-    public static String getName(UUID uuid) throws IOException {
+    public static String getName(UUID uuid) {
         ArrayList<Name> names = getNameHistory(uuid);
         return names.get(names.size() - 1).getName(); // i mean i could get it vai profile, but im hacky af
     }
@@ -76,17 +76,22 @@ public class MojangAPI extends API {
         return getNameHistory(uuid);
     }
 
-    public static ArrayList<Name> getNameHistory(UUID uuid) throws IOException {
+    public static ArrayList<Name> getNameHistory(UUID uuid) {
         Gson gson = new Gson();
         ArrayList<Name> names = new ArrayList<>();
-        String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", stripDashes(uuid)));
-        JsonElement parser = new JsonParser().parse(json);
-        if (json.isEmpty()) throw new InvalidPlayerException();
-        JsonArray arrayNames = parser.getAsJsonArray();
-        arrayNames.forEach(obj -> {
-            Name name = gson.fromJson(obj, Name.class);
-            names.add(name);
-        });
+        try {
+            String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", stripDashes(uuid)));
+
+            JsonElement parser = new JsonParser().parse(json);
+            if (json.isEmpty()) throw new InvalidPlayerException();
+            JsonArray arrayNames = parser.getAsJsonArray();
+            arrayNames.forEach(obj -> {
+                Name name = gson.fromJson(obj, Name.class);
+                names.add(name);
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return names;
     }
 
@@ -96,7 +101,7 @@ public class MojangAPI extends API {
         if (parse.isJsonNull())
             throw new InvalidPlayerException();
         JsonObject obj = parse.getAsJsonObject();
-        if(obj.get("error") instanceof JsonNull)
+        if (obj.get("error") instanceof JsonNull)
             throw new APIException(obj.get("errorMessage").getAsString());
         return UUID.fromString(addDashes(obj.get("id").getAsString()));
     }

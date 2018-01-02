@@ -27,5 +27,6 @@ public class MojangNamesExample {
             System.out.println(String.format("%s -> %s", name, formatter.format(history.getChangedToAt())));
         }
         System.out.println("--------------------------\n");
+
     }
 }

@@ -212,12 +212,12 @@ public class HypixelAPI extends API {
 
     /**
      * Gets Guild ID
-     * @param name
+     * @param
      * @return
      * @throws IOException
      */
-    public String getGuildID(String name) throws IOException, APIException {
-        UUID uuid = MojangAPI.getUUID(name);
+    public String getGuildID(String playerName) throws IOException, APIException {
+        UUID uuid = MojangAPI.getUUID(playerName);
         return getGuildID(uuid);
     }
 

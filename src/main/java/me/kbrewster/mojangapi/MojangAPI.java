@@ -79,9 +79,7 @@ public class MojangAPI extends API {
     public static ArrayList<Name> getNameHistory(UUID uuid) throws IOException {
         Gson gson = new Gson();
         ArrayList<Name> names = new ArrayList<>();
-        System.out.println(stripDashes(uuid));
         String json = sendGet(String.format(BASE_URL + "/user/profiles/%s/names", stripDashes(uuid)));
-        System.out.println(json);
         JsonElement parser = new JsonParser().parse(json);
         if (json.isEmpty()) throw new InvalidPlayerException();
         JsonArray arrayNames = parser.getAsJsonArray();

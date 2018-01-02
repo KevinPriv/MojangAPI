@@ -201,7 +201,6 @@ public class HypixelAPI extends API {
         if (!json.get("success").getAsBoolean())
             throw new APIException(json.get("cause").getAsString());
         JsonObject lb = json.getAsJsonObject("leaderboards");
-        System.out.println(leaderboard.name());
         lb.getAsJsonArray(leaderboard.name()).forEach(element -> {
             leaderboards.add(gson.fromJson(element, Leaderboard.class));
         });

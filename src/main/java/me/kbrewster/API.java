@@ -10,7 +10,7 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * API Commons
  */
-@API.Reference(apiName = "API", apiVersion = "1.1.2")
+@API.Reference(apiName = "API", apiVersion = "1.5")
 public abstract class API {
 
     @Getter

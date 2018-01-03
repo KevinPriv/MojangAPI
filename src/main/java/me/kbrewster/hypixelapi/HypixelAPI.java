@@ -27,7 +27,7 @@ import java.util.UUID;
  * Allows to access to the Hypixel API
  * https://api.hypixel.net/
  */
-@API.Reference(apiName = "Hypixel API", apiVersion = "1.1.4")
+@API.Reference(apiName = "Hypixel API", apiVersion = "1.5")
 public class HypixelAPI extends API {
 
     /**

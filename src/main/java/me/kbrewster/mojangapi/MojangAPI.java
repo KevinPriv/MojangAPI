@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
  * Allows access to the MojangAPI
  * Full Documentation of API found here: http://wiki.vg/Mojang_API
  */
-@API.Reference(apiName = "Mojang API", apiVersion = "1.1.4")
+@API.Reference(apiName = "Mojang API", apiVersion = "1.5")
 public class MojangAPI extends API {
 
     private final static String BASE_URL = "https://api.mojang.com";

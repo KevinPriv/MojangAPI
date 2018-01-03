@@ -8,7 +8,7 @@ import java.io.File;
 
 public class AuthenticationAndSkinChangerExample {
 
-    private final static String USERNAME = "PUT_USERNAME_HERE";
+    private final static String USERNAME = "PUT_USERNAME/EMAIL_HERE";
     private final static String PASSWORD = "PUT_PASSWORD_HERE";
 
     public static void main(String[] args) throws Exception {

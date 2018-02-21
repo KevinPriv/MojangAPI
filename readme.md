@@ -1,14 +1,13 @@
-# HypixelApi4J
-Parses the Hypixel API and allows easy access by getters
-Now includes full MojangAPI suppport!
+# MojangAPI
+Parsing for all the Mojang API   
 
 Examples: 
 -
-https://github.com/KevinPriv/HypixelApi4J/tree/master/src/test/java/examples
+https://github.com/KevinPriv/MojangAPI/tree/master/src/test/java/examples
 
 Downloads
 -
-https://github.com/KevinPriv/HypixelApi4J/releases  
+https://github.com/KevinPriv/MojangAPI/releases  
 
 Gradle
 -
@@ -22,10 +21,7 @@ Gradle
 Adding the dependency:
 ```gradle
     dependencies {
-        compile "com.github.KevinPriv:HypixelApi4J:API-1.5"
-        compile group: 'com.google.code.gson', name: 'gson', version: '2.8.2'
-        compile 'com.squareup.okhttp3:okhttp:3.9.0'
-
+        compile "com.github.KevinPriv:MojangAPI:1.0"
     }
 
 ```
@@ -44,18 +40,8 @@ Maven
 ```xml
 <dependency>
     <groupId>com.github.KevinPriv</groupId>
-    <artifactId>HypixelApi4J</artifactId>
-    <version>API-1.5</version>
-</dependency>
-<dependency>
-    <groupId>com.squareup.okhttp3</groupId>
-    <artifactId>okhttp</artifactId>
-    <version>3.9.0</version>
-</dependency>
-<dependency>
-    <groupId>com.google.code.gson</groupId>
-    <artifactId>gson</artifactId>
-    <version>2.8.2</version>
+    <artifactId>MojangAPI</artifactId>
+    <version>1.0</version>
 </dependency>
 
 ```

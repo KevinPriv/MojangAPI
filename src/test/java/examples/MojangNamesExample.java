@@ -5,6 +5,8 @@ import me.kbrewster.mojangapi.profile.Name;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class MojangNamesExample {
@@ -16,8 +18,8 @@ public class MojangNamesExample {
         System.out.println("--------------------------\n");
 
         System.out.println("------UUID -> Username-----");
-        UUID uuid = MojangAPI.getUUID("TheDestinyPig");
-        System.out.println("TheDestinyPigs UUID is " + uuid);
+        UUID uuid = MojangAPI.getUUID("Sk1er");
+        System.out.println("Sk1ers UUID is " + uuid);
         System.out.println("--------------------------\n");
 
         System.out.println("------- Name History -----");

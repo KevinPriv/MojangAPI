@@ -14,10 +14,7 @@ import okhttp3.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.UUID;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -52,7 +49,7 @@ public class MojangAPI extends API {
     }
 
     /**
-     *
+     * Gets player profile
      * @param uuid
      * @return {@see me.kbrewster.mojangapi.profile.Profile}
      * @throws IOException
@@ -73,9 +70,13 @@ public class MojangAPI extends API {
      * @param uuid
      * @return
      */
-    public static String getName(UUID uuid) {
+    public static String getName(UUID uuid) throws IOException, APIException {
         ArrayList<Name> names = getNameHistory(uuid);
         return names.get(names.size() - 1).getName(); // i mean i could get it vai profile, but im hacky af
+    }
+
+    public static String getUsername(UUID uuid) throws IOException, APIException {
+        return getProfile(uuid).getName();
     }
 
     /**
@@ -160,6 +161,58 @@ public class MojangAPI extends API {
         if (obj.get("error") instanceof JsonNull)
             throw new APIException(obj.get("errorMessage").getAsString());
         return UUID.fromString(addDashes(obj.get("id").getAsString()));
+    }
+
+    /**
+     * Gets minecraft UUID from Username
+     * @param usernames
+     * @return uuid
+     * @throws IOException
+     * @throws APIException
+     * @throws InvalidPlayerException
+     */
+    public static List<UUID> getUUIDs(List<String> usernames) throws IOException, APIException, InvalidPlayerException {
+        String names = usernames.toString()
+                .replace("[", "[\"")
+                .replace(", ", "\", \"")
+                .replace("]", "\"]");
+        System.out.println(names);
+        String json = sendPost("https://api.mojang.com/profiles/minecraft", names);
+        List<UUID> uuids = new ArrayList<>();
+        JsonElement parse = new JsonParser().parse(json);
+        for(JsonElement element : parse.getAsJsonArray()){
+            if (parse.isJsonNull())
+                throw new InvalidPlayerException();
+            JsonObject obj = element.getAsJsonObject();
+            uuids.add(UUID.fromString(addDashes(obj.get("id").getAsString())));
+        }
+        return uuids;
+    }
+
+    /**
+     * Gets minecraft UUID from Username
+     * @param usernames
+     * @return uuid
+     * @throws IOException
+     * @throws APIException
+     * @throws InvalidPlayerException
+     */
+    public static List<UUID> getUUIDs(String... usernames) throws IOException, APIException, InvalidPlayerException {
+        String names = Arrays.toString(usernames)
+                .replace("[", "[\"")
+                .replace(", ", "\", \"")
+                .replace("]", "\"]");
+        System.out.println(names);
+        String json = sendPost("https://api.mojang.com/profiles/minecraft", names);
+        List<UUID> uuids = new ArrayList<>();
+        JsonElement parse = new JsonParser().parse(json);
+        for(JsonElement element : parse.getAsJsonArray()){
+            if (parse.isJsonNull())
+                throw new InvalidPlayerException();
+            JsonObject obj = element.getAsJsonObject();
+            uuids.add(UUID.fromString(addDashes(obj.get("id").getAsString())));
+        }
+        return uuids;
     }
 
     /**
@@ -338,6 +391,5 @@ public class MojangAPI extends API {
     public static Profile getProfile(String username) throws IOException, APIException {
         return getProfile(getUUID(username));
     }
-
 
 }

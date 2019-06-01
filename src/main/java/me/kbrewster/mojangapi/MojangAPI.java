@@ -58,7 +58,7 @@ public class MojangAPI extends API {
     public static Profile getProfile(UUID uuid) throws IOException, APIException {
         String json = sendGet("https://sessionserver.mojang.com/session/minecraft/profile/" + stripDashes(uuid));
         JsonElement jsonElement = new JsonParser().parse(json);
-        if (jsonElement.isJsonNull()) throw new APIException("This should'nt happen");
+        if (jsonElement.isJsonNull()) throw new APIException("This shouldn't happen");
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         if (jsonObject.get("error") instanceof JsonNull)
             throw new APIException(jsonObject.get("errorMessage").getAsString());

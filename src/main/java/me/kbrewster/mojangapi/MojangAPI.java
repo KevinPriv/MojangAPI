@@ -72,6 +72,7 @@ public class MojangAPI extends API {
      */
     public static String getName(UUID uuid) throws IOException, APIException {
         ArrayList<Name> names = getNameHistory(uuid);
+        if(names.size() == 0) return uuid.toString();
         return names.get(names.size() - 1).getName(); // i mean i could get it vai profile, but im hacky af
     }
 
@@ -133,6 +134,9 @@ public class MojangAPI extends API {
 
             JsonElement parser = new JsonParser().parse(json);
             if (json.isEmpty()) throw new InvalidPlayerException();
+            if (!parser.isJsonArray()) {
+                return names;
+            }
             JsonArray arrayNames = parser.getAsJsonArray();
             arrayNames.forEach(obj -> {
                 Name name = gson.fromJson(obj, Name.class);

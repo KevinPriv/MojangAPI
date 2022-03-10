@@ -12,4 +12,7 @@ public class Property {
     @SerializedName("value")
     @Expose
     private String value;
+    @SerializedName("signature")
+    @Expose
+    private String signature;
 }
